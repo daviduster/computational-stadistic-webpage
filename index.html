@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style type="text/css">
+.inline {
+  background-color: #f7f7f7;
+  border:solid 1px #B0B0B0;
+}
+.error {
+	font-weight: bold;
+	color: #FF0000;
+}
+.warning {
+	font-weight: bold;
+}
+.message {
+	font-style: italic;
+}
+.source, .output, .warning, .error, .message {
+	padding: 0 1em;
+  border:solid 1px #F7F7F7;
+}
+.source {
+  background-color: #f5f5f5;
+}
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
+.center {
+  text-align: center;
+}
+.hl.num {
+  color: #AF0F91;
+}
+.hl.str {
+  color: #317ECC;
+}
+.hl.com {
+  color: #AD95AF;
+  font-style: italic;
+}
+.hl.opt {
+  color: #000000;
+}
+.hl.std {
+  color: #585858;
+}
+.hl.kwa {
+  color: #295F94;
+  font-weight: bold;
+}
+.hl.kwb {
+  color: #B05A65;
+}
+.hl.kwc {
+  color: #55aa55;
+}
+.hl.kwd {
+  color: #BC5A65;
+  font-weight: bold;
+}
+</style>
+	<title>Estadística Computacional</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="hero">
+			<h1 class="name"><strong>David</strong> Martín Vela</h1>
+			<span class="job-title">Estadística Computacional 20-21</span>
+			<span class="email"> <a href="mailto: davidmv1996@correo.ugr.es">davidmv1996@correo.ugr.es</a></span>
+
+			<h2 class="lead">Primera entrega de ejercicios</h2>
+		</div>
+	</div>
+
+	<div class="container">
+		<h2 class="section-title">Ejemplos</h2>
+		<p>
+
+			Generación de 20 números de la normal 0, 1.
+		</p>
+
+<div class="chunk" id="unnamed-chunk-1"><div class="rcode"><div class="source"><pre class="knitr r">  <span class="hl com">## Esta línea es un comentario que no afecta al resultado final</span>
+  <span class="hl std">x</span><span class="hl kwb">=</span><span class="hl kwd">rnorm</span><span class="hl std">(</span><span class="hl num">20</span><span class="hl std">)</span>
+</pre></div>
+</div></div>
+
+		Si no quiere que aparezcan las órdenes que producen un resultado, basta con que use la metaorden
+		<code>echo=FALSE</code>. En el siguiente bloque se presentan los valores anteriormente generados sin que
+		aparezca la orden con la que se consigue.
+
+<div class="chunk" id="unnamed-chunk-2"><div class="rcode"><div class="output"><pre class="knitr r">##  [1] -1.68669331  0.83778704  0.15337312 -1.13813694  1.25381492  0.42646422 -0.29507148  0.89512566  0.87813349  0.82158108  0.68864025
+## [12]  0.55391765 -0.06191171 -0.30596266 -0.38047100 -0.69470698 -0.20791728 -1.26539635  2.16895597  1.20796200
+</pre></div>
+</div></div>
+
+		<p>Este es el histograma de esos datos (centrado mediante la opción
+			<code>fig.align='center'</code> y de tamaño 6x6 mediante las opciones
+			<code>fig.width=6, fig.height=6</code>, unidad de medida son 72 puntos), y que se almacena con un nombre que
+			comienza con <strong>figura1</strong>:
+		</p>
+
+<div class="chunk" id="figura1"><div class="rcode"><div class="source"><pre class="knitr r">  <span class="hl com">## @knitr histograma</span>
+  <span class="hl kwd">hist</span><span class="hl std">(x)</span>
+</pre></div>
+</div><div class="rimage center"><img src="figure/figura1-1.png" title="plot of chunk figura1" alt="plot of chunk figura1" class="plot" /></div></div>
+	</div>
+
+	<br><br>
+
+
+	<footer class="container">
+		<span style="font-size: 16px; margin-top: 16px">Coded by <a href="https://newtodesign.com/">New to design </a>
+			Designed by <a
+				href="https://dribbble.com/shots/4342703-Minimal-resume-freebie-for-junior-self-taught-people">Nicolas
+				Meuzard</a></span>
+	</footer>
+
+
+</body>
+
+</html>
