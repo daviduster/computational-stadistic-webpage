@@ -130,34 +130,34 @@
         <span class="hl std">prob_cara_cruz</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">sum</span><span class="hl std">((moneda_1</span> <span class="hl opt">==</span> <span class="hl str">&quot;Cara&quot;</span> <span class="hl opt">&amp;</span> <span class="hl std">moneda_2</span> <span class="hl opt">==</span> <span class="hl str">&quot;Cruz&quot;</span><span class="hl std">)</span> <span class="hl opt">|</span> <span class="hl std">(moneda_1</span> <span class="hl opt">==</span> <span class="hl str">&quot;Cruz&quot;</span> <span class="hl opt">&amp;</span> <span class="hl std">moneda_2</span> <span class="hl opt">==</span> <span class="hl str">&quot;Cara&quot;</span><span class="hl std">))</span> <span class="hl opt">/</span> <span class="hl std">n</span>
 
         <span class="hl kwd">return</span><span class="hl std">(</span><span class="hl kwd">list</span><span class="hl std">(</span>
-                <span class="hl str">&quot;Resultados Moneda 1&quot;</span> <span class="hl std">=</span> <span class="hl kwd">table</span><span class="hl std">(moneda_1),</span>
-                <span class="hl str">&quot;Resultados Moneda 2&quot;</span> <span class="hl std">=</span> <span class="hl kwd">table</span><span class="hl std">(moneda_2),</span>
-                <span class="hl str">&quot;Probabilidad de sacar ambas cara = &quot;</span> <span class="hl std">= prob_cara_cara,</span>
-                <span class="hl str">&quot;Probabilidad de sacar ambas cruz&quot;</span> <span class="hl std">= prob_cruz_cruz,</span>
-                <span class="hl str">&quot;Probabilidad de sacar cruz y cara&quot;</span> <span class="hl std">= prob_cara_cruz))</span>
+                <span class="hl str">&quot;Resultados Moneda 1 =&quot;</span> <span class="hl std">=</span> <span class="hl kwd">table</span><span class="hl std">(moneda_1),</span>
+                <span class="hl str">&quot;Resultados Moneda 2 =&quot;</span> <span class="hl std">=</span> <span class="hl kwd">table</span><span class="hl std">(moneda_2),</span>
+                <span class="hl str">&quot;Probabilidad de sacar ambas cara =&quot;</span> <span class="hl std">= prob_cara_cara,</span>
+                <span class="hl str">&quot;Probabilidad de sacar ambas cruz=&quot;</span> <span class="hl std">= prob_cruz_cruz,</span>
+                <span class="hl str">&quot;Probabilidad de sacar cruz y cara=&quot;</span> <span class="hl std">= prob_cara_cruz))</span>
 <span class="hl std">}</span>
 
 <span class="hl com"># Para probar la función solo hay que cargar el fichero en R y llamarla con su nombre junto al </span>
 <span class="hl com"># argumento, numero de lanzamientos que se quiera simular. </span>
 <span class="hl kwd">simular_dos_monedas</span><span class="hl std">(</span><span class="hl kwc">n</span> <span class="hl std">=</span> <span class="hl num">15000</span><span class="hl std">)</span>
 </pre></div>
-<div class="output"><pre class="knitr r">## $`Resultados Moneda 1`
+<div class="output"><pre class="knitr r">## $`Resultados Moneda 1 =`
 ## moneda_1
 ## Cara Cruz 
 ## 7515 7485 
 ## 
-## $`Resultados Moneda 2`
+## $`Resultados Moneda 2 =`
 ## moneda_2
 ## Cara Cruz 
 ## 7626 7374 
 ## 
-## $`Probabilidad de sacar ambas cara = `
+## $`Probabilidad de sacar ambas cara =`
 ## [1] 0.2561333
 ## 
-## $`Probabilidad de sacar ambas cruz`
+## $`Probabilidad de sacar ambas cruz=`
 ## [1] 0.2467333
 ## 
-## $`Probabilidad de sacar cruz y cara`
+## $`Probabilidad de sacar cruz y cara=`
 ## [1] 0.4971333
 </pre></div>
 <div class="source"><pre class="knitr r"><span class="hl com"># Nuestros resultados teóricos coinciden con la simulación</span>
@@ -234,7 +234,7 @@
                 <span class="hl str">&quot;Frecuencias segundo dado=&quot;</span> <span class="hl std">= freq_2,</span>
                 <span class="hl str">&quot;Frecuencias relativas primer dado=&quot;</span> <span class="hl std">= freq_relativa_1,</span>
                 <span class="hl str">&quot;Frecuencias relativas segundo dado=&quot;</span> <span class="hl std">=freq_relativa_2,</span>
-                <span class="hl str">&quot;Probabilidad de que la suma sea mayor que 9 = &quot;</span> <span class="hl std">=prob_9) )</span>
+                <span class="hl str">&quot;Probabilidad de que la suma sea mayor que 9=&quot;</span> <span class="hl std">=prob_9) )</span>
 <span class="hl std">}</span>
 
 
@@ -263,7 +263,7 @@
 ##       1       2       3       4       5       6 
 ## 0.16546 0.16820 0.16693 0.16656 0.16491 0.16794 
 ## 
-## $`Probabilidad de que la suma sea mayor que 9 = `
+## $`Probabilidad de que la suma sea mayor que 9=`
 ## [1] 0.16634
 </pre></div>
 <div class="source"><pre class="knitr r"><span class="hl com"># para mostrar la superficie hemos creado la funcion f_suma para que outer la</span>
@@ -293,7 +293,7 @@
 ##         1         2         3         4         5         6 
 ## 0.1750000 0.1416667 0.1500000 0.1833333 0.1916667 0.1583333 
 ## 
-## $`Probabilidad de que la suma sea mayor que 9 = `
+## $`Probabilidad de que la suma sea mayor que 9=`
 ## [1] 0.2083333
 </pre></div>
 <div class="source"><pre class="knitr r"><span class="hl com"># Mostrar la superficie es computacionalmente caro debido a la multiplicación elemento a elemento de outer y a </span>
@@ -339,9 +339,9 @@
         <span class="hl com"># Probabilidad de que sea un numero impar</span>
         <span class="hl std">prob_impar</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">sum</span><span class="hl std">( (dice</span> <span class="hl opt">%%</span> <span class="hl num">2</span><span class="hl std">)</span> <span class="hl opt">!=</span> <span class="hl num">0</span><span class="hl std">)</span> <span class="hl opt">/</span> <span class="hl std">n</span>
 
-        <span class="hl kwd">return</span><span class="hl std">(</span><span class="hl kwd">list</span><span class="hl std">(</span><span class="hl str">&quot;Frecuencias=&quot;</span><span class="hl std">=freq,</span>
-                <span class="hl str">&quot;Probabilidad de sacar un 6 = &quot;</span> <span class="hl std">= prob_6,</span>
-                <span class="hl str">&quot;Probabilidad de que el numero sea impar = &quot;</span> <span class="hl std">= prob_impar))</span>
+        <span class="hl kwd">return</span><span class="hl std">(</span><span class="hl kwd">list</span><span class="hl std">(</span><span class="hl str">&quot;Frecuencias=&quot;</span> <span class="hl std">= freq,</span>
+                <span class="hl str">&quot;Probabilidad de sacar un 6=&quot;</span> <span class="hl std">= prob_6,</span>
+                <span class="hl str">&quot;Probabilidad de que el numero sea impar=&quot;</span> <span class="hl std">= prob_impar))</span>
 <span class="hl std">}</span>
 
 <span class="hl com"># Podemos visualizar esto ejecutando la función dado_truncado con un gran numero de repeticiones </span>
@@ -354,10 +354,10 @@
 ##     1     2     3     4     5     6 
 ## 40664 20396 13829 10103  8164  6844 
 ## 
-## $`Probabilidad de sacar un 6 = `
+## $`Probabilidad de sacar un 6=`
 ## [1] 0.06844
 ## 
-## $`Probabilidad de que el numero sea impar = `
+## $`Probabilidad de que el numero sea impar=`
 ## [1] 0.62657
 </pre></div>
 <div class="source"><pre class="knitr r"><span class="hl com"># donde el resultado sería el que esperábamos teóricamente,</span>
@@ -401,7 +401,7 @@
                 <span class="hl str">&quot;Frecuencias segundo dado=&quot;</span> <span class="hl std">= freq_2,</span>
                 <span class="hl str">&quot;Frecuencias relativas primer dado=&quot;</span> <span class="hl std">= freq_relativa_1,</span>
                 <span class="hl str">&quot;Frecuencias relativas segundo dado=&quot;</span> <span class="hl std">=freq_relativa_2,</span>
-                <span class="hl str">&quot;Probabilidad de que la suma sea mayor que 9 = &quot;</span> <span class="hl std">=prob_9) )</span>
+                <span class="hl str">&quot;Probabilidad de que la suma sea mayor que 9=&quot;</span> <span class="hl std">=prob_9) )</span>
 <span class="hl std">}</span>
 <span class="hl com"># es mucho mayor al inicio (caras de 1) y mucho más pequeña en los cubos del final, en </span>
 <span class="hl com"># las caras superiores, podemos ver esto ejecutando la función simular_dos_dados_truncados</span>
@@ -428,7 +428,7 @@
 ##          1          2          3          4          5          6 
 ## 0.39166667 0.23333333 0.14166667 0.11666667 0.05000000 0.06666667 
 ## 
-## $`Probabilidad de que la suma sea mayor que 9 = `
+## $`Probabilidad de que la suma sea mayor que 9=`
 ## [1] 0.03333333
 </pre></div>
 </div></div>
@@ -498,17 +498,17 @@
 
         <span class="hl kwa">for</span><span class="hl std">(i</span> <span class="hl kwa">in</span> <span class="hl num">1</span><span class="hl opt">:</span><span class="hl std">n_repeticiones) {</span>
 
-<span class="hl kwa">if</span><span class="hl std">(</span><span class="hl kwd">length</span><span class="hl std">(</span><span class="hl kwd">which</span><span class="hl std">(simulacion[,i]</span> <span class="hl opt">==</span> <span class="hl str">&quot;Blanca&quot;</span><span class="hl std">))</span> <span class="hl opt">==</span> <span class="hl num">2</span><span class="hl std">){</span>
-        <span class="hl std">casos_2_blancas</span> <span class="hl kwb">&lt;-</span> <span class="hl std">casos_2_blancas</span> <span class="hl opt">+</span> <span class="hl num">1</span>
-<span class="hl std">}</span>
+                <span class="hl kwa">if</span><span class="hl std">(</span><span class="hl kwd">length</span><span class="hl std">(</span><span class="hl kwd">which</span><span class="hl std">(simulacion[,i]</span> <span class="hl opt">==</span> <span class="hl str">&quot;Blanca&quot;</span><span class="hl std">))</span> <span class="hl opt">==</span> <span class="hl num">2</span><span class="hl std">){</span>
+                        <span class="hl std">casos_2_blancas</span> <span class="hl kwb">&lt;-</span> <span class="hl std">casos_2_blancas</span> <span class="hl opt">+</span> <span class="hl num">1</span>
+                <span class="hl std">}</span>
 
-<span class="hl kwa">if</span><span class="hl std">(</span><span class="hl kwd">length</span><span class="hl std">(</span><span class="hl kwd">which</span><span class="hl std">(simulacion[,i]</span> <span class="hl opt">==</span> <span class="hl str">&quot;Blanca&quot;</span><span class="hl std">))</span> <span class="hl opt">==</span> <span class="hl num">2</span> <span class="hl opt">&amp;&amp;</span> <span class="hl kwd">length</span><span class="hl std">(</span><span class="hl kwd">which</span><span class="hl std">(simulacion[,i]</span> <span class="hl opt">==</span> <span class="hl str">&quot;Roja&quot;</span><span class="hl std">))</span> <span class="hl opt">==</span> <span class="hl num">1</span><span class="hl std">){</span>
-        <span class="hl std">casos_2_blancas_1_roja</span> <span class="hl kwb">&lt;-</span> <span class="hl std">casos_2_blancas_1_roja</span> <span class="hl opt">+</span> <span class="hl num">1</span>
-<span class="hl std">}</span>
+                <span class="hl kwa">if</span><span class="hl std">(</span><span class="hl kwd">length</span><span class="hl std">(</span><span class="hl kwd">which</span><span class="hl std">(simulacion[,i]</span> <span class="hl opt">==</span> <span class="hl str">&quot;Blanca&quot;</span><span class="hl std">))</span> <span class="hl opt">==</span> <span class="hl num">2</span> <span class="hl opt">&amp;&amp;</span> <span class="hl kwd">length</span><span class="hl std">(</span><span class="hl kwd">which</span><span class="hl std">(simulacion[,i]</span> <span class="hl opt">==</span> <span class="hl str">&quot;Roja&quot;</span><span class="hl std">))</span> <span class="hl opt">==</span> <span class="hl num">1</span><span class="hl std">){</span>
+                        <span class="hl std">casos_2_blancas_1_roja</span> <span class="hl kwb">&lt;-</span> <span class="hl std">casos_2_blancas_1_roja</span> <span class="hl opt">+</span> <span class="hl num">1</span>
+                <span class="hl std">}</span>
 
-<span class="hl kwa">if</span><span class="hl std">(</span><span class="hl kwd">length</span><span class="hl std">(</span><span class="hl kwd">which</span><span class="hl std">(simulacion[,i]</span> <span class="hl opt">==</span> <span class="hl str">&quot;Negra&quot;</span><span class="hl std">))</span> <span class="hl opt">&gt;</span> <span class="hl num">1</span><span class="hl std">){</span>
-        <span class="hl std">casos_al_menos_2_negras</span> <span class="hl kwb">&lt;-</span> <span class="hl std">casos_al_menos_2_negras</span> <span class="hl opt">+</span> <span class="hl num">1</span>
-<span class="hl std">}</span>
+                <span class="hl kwa">if</span><span class="hl std">(</span><span class="hl kwd">length</span><span class="hl std">(</span><span class="hl kwd">which</span><span class="hl std">(simulacion[,i]</span> <span class="hl opt">==</span> <span class="hl str">&quot;Negra&quot;</span><span class="hl std">))</span> <span class="hl opt">&gt;</span> <span class="hl num">1</span><span class="hl std">){</span>
+                        <span class="hl std">casos_al_menos_2_negras</span> <span class="hl kwb">&lt;-</span> <span class="hl std">casos_al_menos_2_negras</span> <span class="hl opt">+</span> <span class="hl num">1</span>
+                <span class="hl std">}</span>
         <span class="hl std">}</span>
 
         <span class="hl com"># La probabilidad es los casos favorables entre el total</span>
@@ -518,9 +518,9 @@
 
 
         <span class="hl kwd">return</span><span class="hl std">(</span><span class="hl kwd">list</span><span class="hl std">(</span><span class="hl str">&quot;Frecuencias=&quot;</span><span class="hl std">=</span><span class="hl kwd">table</span><span class="hl std">(simulacion),</span>
-<span class="hl str">&quot;Probabilidad 2 blancas=&quot;</span><span class="hl std">=prob_2_blancas,</span>
-<span class="hl str">&quot;Probabilidad 2 blancas y 1 roja=&quot;</span><span class="hl std">=prob_2_blancas_1_roja,</span>
-<span class="hl str">&quot;Probabilidad al menos 2 negras=&quot;</span><span class="hl std">=prob_al_menos_2_negras))</span>
+                <span class="hl str">&quot;Probabilidad 2 blancas=&quot;</span><span class="hl std">=prob_2_blancas,</span>
+                <span class="hl str">&quot;Probabilidad 2 blancas y 1 roja=&quot;</span><span class="hl std">=prob_2_blancas_1_roja,</span>
+                <span class="hl str">&quot;Probabilidad al menos 2 negras=&quot;</span><span class="hl std">=prob_al_menos_2_negras))</span>
 <span class="hl std">}</span>
 
 <span class="hl com"># El calculo empírico de los sucesos que se piden anteriormente es la suma de las </span>
@@ -571,7 +571,7 @@
 </pre></div>
 <div class="output"><pre class="knitr r">## 
 ## The downloaded binary packages are in
-## 	/var/folders/_r/46skybsx7nz84cxqb358mz600000gn/T//RtmpHaHVCd/downloaded_packages
+## 	/var/folders/_r/46skybsx7nz84cxqb358mz600000gn/T//Rtmpp5SswP/downloaded_packages
 </pre></div>
 <div class="source"><pre class="knitr r"><span class="hl com"># Actualmente esta comentada en el código pero si no dispone de ese paquete se puede descomentar para la función </span>
 <span class="hl com"># instale el paquete.</span>
@@ -582,48 +582,48 @@
         <span class="hl std">extracciones</span> <span class="hl kwb">&lt;-</span> <span class="hl num">5</span>
 
         <span class="hl kwa">if</span><span class="hl std">(reemplazamiento){</span>
-<span class="hl com"># Probabilidad 2 blancas, suma de la probabilidad de cada caso</span>
-<span class="hl std">prob_2_blancas</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">dmultinom</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">3</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">0</span><span class="hl std">),</span> <span class="hl kwc">prob</span> <span class="hl std">= n_bolas)</span> <span class="hl opt">+</span>
-                <span class="hl kwd">dmultinom</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">),</span> <span class="hl kwc">prob</span> <span class="hl std">= n_bolas)</span> <span class="hl opt">+</span>
-                <span class="hl kwd">dmultinom</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">),</span> <span class="hl kwc">prob</span> <span class="hl std">= n_bolas)</span> <span class="hl opt">+</span>
-                <span class="hl kwd">dmultinom</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">0</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">3</span><span class="hl std">),</span> <span class="hl kwc">prob</span> <span class="hl std">= n_bolas);</span>
+                <span class="hl com"># Probabilidad 2 blancas, suma de la probabilidad de cada caso</span>
+                <span class="hl std">prob_2_blancas</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">dmultinom</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">3</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">0</span><span class="hl std">),</span> <span class="hl kwc">prob</span> <span class="hl std">= n_bolas)</span> <span class="hl opt">+</span>
+                                <span class="hl kwd">dmultinom</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">),</span> <span class="hl kwc">prob</span> <span class="hl std">= n_bolas)</span> <span class="hl opt">+</span>
+                                <span class="hl kwd">dmultinom</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">),</span> <span class="hl kwc">prob</span> <span class="hl std">= n_bolas)</span> <span class="hl opt">+</span>
+                                <span class="hl kwd">dmultinom</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">0</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">3</span><span class="hl std">),</span> <span class="hl kwc">prob</span> <span class="hl std">= n_bolas);</span>
 
-<span class="hl com"># Probabilidad 2 blancas 1 roja, suma de la probabilidad de cada caso	</span>
-<span class="hl std">prob_2_blancas_1_roja</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">dmultinom</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">),</span> <span class="hl kwc">prob</span> <span class="hl std">= n_bolas);</span>
+                <span class="hl com"># Probabilidad 2 blancas 1 roja, suma de la probabilidad de cada caso	</span>
+                <span class="hl std">prob_2_blancas_1_roja</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">dmultinom</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">),</span> <span class="hl kwc">prob</span> <span class="hl std">= n_bolas);</span>
 
-<span class="hl com"># Probabilidad al menos 2 negras, suma de la probabilidad de cada caso</span>
-<span class="hl std">prob_al_menos_2_negras</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">dmultinom</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">0</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">3</span><span class="hl std">),</span> <span class="hl kwc">prob</span> <span class="hl std">= n_bolas)</span> <span class="hl opt">+</span>
-                        <span class="hl kwd">dmultinom</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">3</span><span class="hl std">),</span> <span class="hl kwc">prob</span> <span class="hl std">= n_bolas)</span> <span class="hl opt">+</span>
-                        <span class="hl kwd">dmultinom</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">0</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">3</span><span class="hl std">),</span> <span class="hl kwc">prob</span> <span class="hl std">= n_bolas)</span> <span class="hl opt">+</span>
-                        <span class="hl kwd">dmultinom</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">0</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">3</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">),</span> <span class="hl kwc">prob</span> <span class="hl std">= n_bolas)</span> <span class="hl opt">+</span>
-                        <span class="hl kwd">dmultinom</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">),</span> <span class="hl kwc">prob</span> <span class="hl std">= n_bolas)</span> <span class="hl opt">+</span>
-                        <span class="hl kwd">dmultinom</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">),</span> <span class="hl kwc">prob</span> <span class="hl std">= n_bolas)</span> <span class="hl opt">+</span>
-                        <span class="hl kwd">dmultinom</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">3</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">0</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">),</span> <span class="hl kwc">prob</span> <span class="hl std">= n_bolas);</span>
+                <span class="hl com"># Probabilidad al menos 2 negras, suma de la probabilidad de cada caso</span>
+                <span class="hl std">prob_al_menos_2_negras</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">dmultinom</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">0</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">3</span><span class="hl std">),</span> <span class="hl kwc">prob</span> <span class="hl std">= n_bolas)</span> <span class="hl opt">+</span>
+                                        <span class="hl kwd">dmultinom</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">3</span><span class="hl std">),</span> <span class="hl kwc">prob</span> <span class="hl std">= n_bolas)</span> <span class="hl opt">+</span>
+                                        <span class="hl kwd">dmultinom</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">0</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">3</span><span class="hl std">),</span> <span class="hl kwc">prob</span> <span class="hl std">= n_bolas)</span> <span class="hl opt">+</span>
+                                        <span class="hl kwd">dmultinom</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">0</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">3</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">),</span> <span class="hl kwc">prob</span> <span class="hl std">= n_bolas)</span> <span class="hl opt">+</span>
+                                        <span class="hl kwd">dmultinom</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">),</span> <span class="hl kwc">prob</span> <span class="hl std">= n_bolas)</span> <span class="hl opt">+</span>
+                                        <span class="hl kwd">dmultinom</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">),</span> <span class="hl kwc">prob</span> <span class="hl std">= n_bolas)</span> <span class="hl opt">+</span>
+                                        <span class="hl kwd">dmultinom</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">3</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">0</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">),</span> <span class="hl kwc">prob</span> <span class="hl std">= n_bolas);</span>
         <span class="hl std">}</span> <span class="hl kwa">else</span> <span class="hl std">{</span>
-<span class="hl com"># install.packages(&quot;extraDistr&quot;);</span>
-<span class="hl kwd">library</span><span class="hl std">(</span><span class="hl str">&quot;extraDistr&quot;</span><span class="hl std">);</span>
+                <span class="hl com"># install.packages(&quot;extraDistr&quot;);</span>
+                <span class="hl kwd">library</span><span class="hl std">(</span><span class="hl str">&quot;extraDistr&quot;</span><span class="hl std">);</span>
 
-<span class="hl std">prob_2_blancas</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">dmvhyper</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">3</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">0</span><span class="hl std">),</span> <span class="hl kwc">n</span> <span class="hl std">= n_bolas,</span> <span class="hl kwc">k</span> <span class="hl std">= extracciones)</span> <span class="hl opt">+</span>
-                <span class="hl kwd">dmvhyper</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">),</span> <span class="hl kwc">n</span> <span class="hl std">= n_bolas,</span> <span class="hl kwc">k</span> <span class="hl std">= extracciones)</span> <span class="hl opt">+</span>
-                <span class="hl kwd">dmvhyper</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">),</span> <span class="hl kwc">n</span> <span class="hl std">= n_bolas,</span> <span class="hl kwc">k</span> <span class="hl std">= extracciones)</span> <span class="hl opt">+</span>
-                <span class="hl kwd">dmvhyper</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">0</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">3</span><span class="hl std">),</span> <span class="hl kwc">n</span> <span class="hl std">= n_bolas,</span> <span class="hl kwc">k</span> <span class="hl std">= extracciones);</span>
+                <span class="hl std">prob_2_blancas</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">dmvhyper</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">3</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">0</span><span class="hl std">),</span> <span class="hl kwc">n</span> <span class="hl std">= n_bolas,</span> <span class="hl kwc">k</span> <span class="hl std">= extracciones)</span> <span class="hl opt">+</span>
+                                <span class="hl kwd">dmvhyper</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">),</span> <span class="hl kwc">n</span> <span class="hl std">= n_bolas,</span> <span class="hl kwc">k</span> <span class="hl std">= extracciones)</span> <span class="hl opt">+</span>
+                                <span class="hl kwd">dmvhyper</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">),</span> <span class="hl kwc">n</span> <span class="hl std">= n_bolas,</span> <span class="hl kwc">k</span> <span class="hl std">= extracciones)</span> <span class="hl opt">+</span>
+                                <span class="hl kwd">dmvhyper</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">0</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">3</span><span class="hl std">),</span> <span class="hl kwc">n</span> <span class="hl std">= n_bolas,</span> <span class="hl kwc">k</span> <span class="hl std">= extracciones);</span>
 
-<span class="hl com"># Probabilidad 2 blancas 1 roja, suma de la probabilidad de cada caso	</span>
-<span class="hl std">prob_2_blancas_1_roja</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">dmvhyper</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">),</span> <span class="hl kwc">n</span> <span class="hl std">= n_bolas,</span> <span class="hl kwc">k</span> <span class="hl std">= extracciones);</span>
+                <span class="hl com"># Probabilidad 2 blancas 1 roja, suma de la probabilidad de cada caso	</span>
+                <span class="hl std">prob_2_blancas_1_roja</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">dmvhyper</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">),</span> <span class="hl kwc">n</span> <span class="hl std">= n_bolas,</span> <span class="hl kwc">k</span> <span class="hl std">= extracciones);</span>
 
-<span class="hl com"># Probabilidad al menos 2 negras, suma de la probabilidad de cada caso</span>
-<span class="hl std">prob_al_menos_2_negras</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">dmvhyper</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">0</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">3</span><span class="hl std">),</span> <span class="hl kwc">n</span> <span class="hl std">= n_bolas,</span> <span class="hl kwc">k</span> <span class="hl std">= extracciones)</span> <span class="hl opt">+</span>
-                        <span class="hl kwd">dmvhyper</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">3</span><span class="hl std">),</span> <span class="hl kwc">n</span> <span class="hl std">= n_bolas,</span> <span class="hl kwc">k</span> <span class="hl std">= extracciones)</span> <span class="hl opt">+</span>
-                        <span class="hl kwd">dmvhyper</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">0</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">3</span><span class="hl std">),</span> <span class="hl kwc">n</span> <span class="hl std">= n_bolas,</span> <span class="hl kwc">k</span> <span class="hl std">= extracciones)</span> <span class="hl opt">+</span>
-                        <span class="hl kwd">dmvhyper</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">0</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">3</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">),</span> <span class="hl kwc">n</span> <span class="hl std">= n_bolas,</span> <span class="hl kwc">k</span> <span class="hl std">= extracciones)</span> <span class="hl opt">+</span>
-                        <span class="hl kwd">dmvhyper</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">),</span> <span class="hl kwc">n</span> <span class="hl std">= n_bolas,</span> <span class="hl kwc">k</span> <span class="hl std">= extracciones)</span> <span class="hl opt">+</span>
-                        <span class="hl kwd">dmvhyper</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">),</span> <span class="hl kwc">n</span> <span class="hl std">= n_bolas,</span> <span class="hl kwc">k</span> <span class="hl std">= extracciones)</span> <span class="hl opt">+</span>
-                        <span class="hl kwd">dmvhyper</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">3</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">0</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">),</span> <span class="hl kwc">n</span> <span class="hl std">= n_bolas,</span> <span class="hl kwc">k</span> <span class="hl std">= extracciones);</span>
+                <span class="hl com"># Probabilidad al menos 2 negras, suma de la probabilidad de cada caso</span>
+                <span class="hl std">prob_al_menos_2_negras</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">dmvhyper</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">0</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">3</span><span class="hl std">),</span> <span class="hl kwc">n</span> <span class="hl std">= n_bolas,</span> <span class="hl kwc">k</span> <span class="hl std">= extracciones)</span> <span class="hl opt">+</span>
+                                        <span class="hl kwd">dmvhyper</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">3</span><span class="hl std">),</span> <span class="hl kwc">n</span> <span class="hl std">= n_bolas,</span> <span class="hl kwc">k</span> <span class="hl std">= extracciones)</span> <span class="hl opt">+</span>
+                                        <span class="hl kwd">dmvhyper</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">0</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">3</span><span class="hl std">),</span> <span class="hl kwc">n</span> <span class="hl std">= n_bolas,</span> <span class="hl kwc">k</span> <span class="hl std">= extracciones)</span> <span class="hl opt">+</span>
+                                        <span class="hl kwd">dmvhyper</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">0</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">3</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">),</span> <span class="hl kwc">n</span> <span class="hl std">= n_bolas,</span> <span class="hl kwc">k</span> <span class="hl std">= extracciones)</span> <span class="hl opt">+</span>
+                                        <span class="hl kwd">dmvhyper</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">),</span> <span class="hl kwc">n</span> <span class="hl std">= n_bolas,</span> <span class="hl kwc">k</span> <span class="hl std">= extracciones)</span> <span class="hl opt">+</span>
+                                        <span class="hl kwd">dmvhyper</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">),</span> <span class="hl kwc">n</span> <span class="hl std">= n_bolas,</span> <span class="hl kwc">k</span> <span class="hl std">= extracciones)</span> <span class="hl opt">+</span>
+                                        <span class="hl kwd">dmvhyper</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;Blanca&quot;</span> <span class="hl std">=</span> <span class="hl num">3</span><span class="hl std">,</span> <span class="hl str">&quot;Roja&quot;</span> <span class="hl std">=</span> <span class="hl num">0</span><span class="hl std">,</span> <span class="hl str">&quot;Negra&quot;</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">),</span> <span class="hl kwc">n</span> <span class="hl std">= n_bolas,</span> <span class="hl kwc">k</span> <span class="hl std">= extracciones);</span>
         <span class="hl std">}</span>
 
         <span class="hl kwd">return</span><span class="hl std">(</span><span class="hl kwd">list</span><span class="hl std">(</span><span class="hl str">&quot;Probabilidad 2 blancas=&quot;</span><span class="hl std">=prob_2_blancas,</span>
-<span class="hl str">&quot;Probabilidad 2 blancas y 1 roja=&quot;</span><span class="hl std">=prob_2_blancas_1_roja,</span>
-<span class="hl str">&quot;Probabilidad al menos 2 negras=&quot;</span><span class="hl std">=prob_al_menos_2_negras))</span>
+                <span class="hl str">&quot;Probabilidad 2 blancas y 1 roja=&quot;</span><span class="hl std">=prob_2_blancas_1_roja,</span>
+                <span class="hl str">&quot;Probabilidad al menos 2 negras=&quot;</span><span class="hl std">=prob_al_menos_2_negras))</span>
 <span class="hl std">}</span>
 <span class="hl com"># Para llamar a la función basta con escribir su nombre junto al tipo de reemplazamiento que se desea</span>
 <span class="hl kwd">probabilidades_teoricas</span><span class="hl std">(</span><span class="hl kwc">reemplazamiento</span> <span class="hl std">=</span> <span class="hl num">TRUE</span><span class="hl std">)</span>
@@ -706,9 +706,9 @@
         <span class="hl com"># Se tiene que obtener cara|cruz o cruz|cara, de otra manera volvemos a</span>
         <span class="hl com"># lanzar la moneda dos veces</span>
         <span class="hl kwa">if</span><span class="hl std">( cara_cruz</span> <span class="hl opt">||</span> <span class="hl std">cruz_cara){</span>
-<span class="hl kwd">return</span><span class="hl std">(dos_monedas)</span>
+                <span class="hl kwd">return</span><span class="hl std">(dos_monedas)</span>
         <span class="hl std">}</span>       <span class="hl kwa">else</span> <span class="hl std">{</span>
-<span class="hl kwd">return</span><span class="hl std">(</span><span class="hl kwd">lanzas_dos_monedas_truncadas</span><span class="hl std">())</span>
+                <span class="hl kwd">return</span><span class="hl std">(</span><span class="hl kwd">lanzas_dos_monedas_truncadas</span><span class="hl std">())</span>
         <span class="hl std">}</span>
 <span class="hl std">}</span>
 <span class="hl com"># La función (aunque no es necesario) puede llamarse de la siguiente manera.</span>
@@ -729,13 +729,13 @@
         <span class="hl std">casos_cara_cruz</span> <span class="hl kwb">&lt;-</span> <span class="hl num">0</span>
         <span class="hl std">casos_cruz_cara</span> <span class="hl kwb">&lt;-</span> <span class="hl num">0</span>
         <span class="hl kwa">for</span> <span class="hl std">(i</span> <span class="hl kwa">in</span> <span class="hl num">1</span><span class="hl opt">:</span><span class="hl std">n){</span>
-<span class="hl kwa">if</span> <span class="hl std">(simulacion[,i][</span><span class="hl num">1</span><span class="hl std">]</span> <span class="hl opt">==</span> <span class="hl str">&quot;Cara&quot;</span> <span class="hl opt">&amp;&amp;</span> <span class="hl std">simulacion[,i][</span><span class="hl num">2</span><span class="hl std">]</span> <span class="hl opt">==</span> <span class="hl str">&quot;Cruz&quot;</span><span class="hl std">){</span>
-        <span class="hl std">casos_cara_cruz</span> <span class="hl kwb">&lt;-</span>      <span class="hl std">casos_cara_cruz</span> <span class="hl opt">+</span> <span class="hl num">1</span>
-<span class="hl std">}</span>
+                <span class="hl kwa">if</span> <span class="hl std">(simulacion[,i][</span><span class="hl num">1</span><span class="hl std">]</span> <span class="hl opt">==</span> <span class="hl str">&quot;Cara&quot;</span> <span class="hl opt">&amp;&amp;</span> <span class="hl std">simulacion[,i][</span><span class="hl num">2</span><span class="hl std">]</span> <span class="hl opt">==</span> <span class="hl str">&quot;Cruz&quot;</span><span class="hl std">){</span>
+                        <span class="hl std">casos_cara_cruz</span> <span class="hl kwb">&lt;-</span>      <span class="hl std">casos_cara_cruz</span> <span class="hl opt">+</span> <span class="hl num">1</span>
+                <span class="hl std">}</span>
 
-<span class="hl kwa">if</span> <span class="hl std">(simulacion[,i][</span><span class="hl num">1</span><span class="hl std">]</span> <span class="hl opt">==</span> <span class="hl str">&quot;Cruz&quot;</span> <span class="hl opt">&amp;&amp;</span> <span class="hl std">simulacion[,i][</span><span class="hl num">2</span><span class="hl std">]</span> <span class="hl opt">==</span> <span class="hl str">&quot;Cara&quot;</span><span class="hl std">){</span>
-        <span class="hl std">casos_cruz_cara</span> <span class="hl kwb">&lt;-</span>      <span class="hl std">casos_cruz_cara</span> <span class="hl opt">+</span> <span class="hl num">1</span>
-<span class="hl std">}</span>
+                <span class="hl kwa">if</span> <span class="hl std">(simulacion[,i][</span><span class="hl num">1</span><span class="hl std">]</span> <span class="hl opt">==</span> <span class="hl str">&quot;Cruz&quot;</span> <span class="hl opt">&amp;&amp;</span> <span class="hl std">simulacion[,i][</span><span class="hl num">2</span><span class="hl std">]</span> <span class="hl opt">==</span> <span class="hl str">&quot;Cara&quot;</span><span class="hl std">){</span>
+                        <span class="hl std">casos_cruz_cara</span> <span class="hl kwb">&lt;-</span>      <span class="hl std">casos_cruz_cara</span> <span class="hl opt">+</span> <span class="hl num">1</span>
+                <span class="hl std">}</span>
 
         <span class="hl com"># Proporcion </span>
         <span class="hl std">prob_cara_cruz</span> <span class="hl kwb">&lt;-</span> <span class="hl std">casos_cara_cruz</span> <span class="hl opt">/</span> <span class="hl std">n</span>
@@ -744,8 +744,8 @@
         <span class="hl std">}</span>
 
         <span class="hl kwd">return</span><span class="hl std">(</span><span class="hl kwd">list</span><span class="hl std">(</span><span class="hl str">&quot;Frecuencias=&quot;</span><span class="hl std">=</span><span class="hl kwd">table</span><span class="hl std">(simulacion),</span>
-<span class="hl str">&quot;Proporción primera cara segunda cruz =&quot;</span><span class="hl std">=prob_cara_cruz,</span>
-<span class="hl str">&quot;Proporción primera cruz segunda cara =&quot;</span><span class="hl std">=prob_cruz_cara))</span>
+                <span class="hl str">&quot;Proporción primera cara segunda cruz =&quot;</span><span class="hl std">=prob_cara_cruz,</span>
+                <span class="hl str">&quot;Proporción primera cruz segunda cara =&quot;</span><span class="hl std">=prob_cruz_cara))</span>
 <span class="hl std">}</span>
 <span class="hl com"># Un ejemplo de ejecución es:</span>
 <span class="hl kwd">simular_dos_monedas</span><span class="hl std">(</span><span class="hl kwc">n</span> <span class="hl std">=</span> <span class="hl num">15000</span><span class="hl std">)</span>
@@ -820,7 +820,7 @@
 <span class="hl com"># si la suma del segundo y tercer dado es menor que 5, la partícula se movería hacia arriba y sería</span>
 <span class="hl com"># otro paso, esto se puede cambiar fácilmente a otra posible adaptación). </span>
 <span class="hl com"># Finalmente, utilizamos un booleano condicion_alcanzada para saber si la condición se ha cumplido o no.</span>
- <span class="hl std">simulacion_particula</span> <span class="hl kwb">=</span> <span class="hl kwa">function</span><span class="hl std">(</span><span class="hl kwc">t</span> <span class="hl std">=</span> <span class="hl num">1000</span><span class="hl std">){</span>
+<span class="hl std">simulacion_particula</span> <span class="hl kwb">=</span> <span class="hl kwa">function</span><span class="hl std">(</span><span class="hl kwc">t</span> <span class="hl std">=</span> <span class="hl num">1000</span><span class="hl std">){</span>
         <span class="hl com"># Posición instante inicial partícula (0,0)</span>
         <span class="hl std">x</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">vector</span><span class="hl std">(</span><span class="hl str">&quot;numeric&quot;</span><span class="hl std">,</span> <span class="hl num">1</span><span class="hl std">)</span>
         <span class="hl std">y</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">vector</span><span class="hl std">(</span><span class="hl str">&quot;numeric&quot;</span><span class="hl std">,</span> <span class="hl num">1</span><span class="hl std">)</span>
@@ -831,49 +831,49 @@
         <span class="hl std">maximo_tiempo</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">min</span><span class="hl std">(t,</span> <span class="hl num">1000</span><span class="hl std">)</span>
 
         <span class="hl kwa">for</span><span class="hl std">(i</span> <span class="hl kwa">in</span> <span class="hl num">2</span><span class="hl opt">:</span><span class="hl std">maximo_tiempo){</span>
-<span class="hl com"># Por cada tiempo t lanzamos 3 dados</span>
-<span class="hl std">tres_dados</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">lanzar_tres_dados</span><span class="hl std">()</span>
+                <span class="hl com"># Por cada tiempo t lanzamos 3 dados</span>
+                <span class="hl std">tres_dados</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">lanzar_tres_dados</span><span class="hl std">()</span>
 
-<span class="hl com"># Si el primer dado es 1 o 2, movemos el punto una unidad a la derecha</span>
-<span class="hl com"># si no, a la izquierda</span>
-<span class="hl kwa">if</span><span class="hl std">(tres_dados[</span><span class="hl num">1</span><span class="hl std">]</span> <span class="hl opt">==</span> <span class="hl num">1</span> <span class="hl opt">||</span> <span class="hl std">tres_dados[</span><span class="hl num">1</span><span class="hl std">]</span> <span class="hl opt">==</span> <span class="hl num">2</span><span class="hl std">){</span>
-        <span class="hl std">unidad_x</span> <span class="hl kwb">&lt;-</span> <span class="hl num">1</span>
-<span class="hl std">}</span> <span class="hl kwa">else</span> <span class="hl std">{</span>
-        <span class="hl std">unidad_x</span> <span class="hl kwb">&lt;-</span> <span class="hl opt">-</span><span class="hl num">1</span>
-<span class="hl std">}</span>
+                <span class="hl com"># Si el primer dado es 1 o 2, movemos el punto una unidad a la derecha</span>
+                <span class="hl com"># si no, a la izquierda</span>
+                <span class="hl kwa">if</span><span class="hl std">(tres_dados[</span><span class="hl num">1</span><span class="hl std">]</span> <span class="hl opt">==</span> <span class="hl num">1</span> <span class="hl opt">||</span> <span class="hl std">tres_dados[</span><span class="hl num">1</span><span class="hl std">]</span> <span class="hl opt">==</span> <span class="hl num">2</span><span class="hl std">){</span>
+                        <span class="hl std">unidad_x</span> <span class="hl kwb">&lt;-</span> <span class="hl num">1</span>
+                <span class="hl std">}</span> <span class="hl kwa">else</span> <span class="hl std">{</span>
+                        <span class="hl std">unidad_x</span> <span class="hl kwb">&lt;-</span> <span class="hl opt">-</span><span class="hl num">1</span>
+                <span class="hl std">}</span>
 
-<span class="hl com"># Actualizamos posición x</span>
-<span class="hl std">pasos</span> <span class="hl kwb">&lt;-</span> <span class="hl std">pasos</span> <span class="hl opt">+</span> <span class="hl num">1</span>
-<span class="hl std">x</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">append</span><span class="hl std">(x, x[</span><span class="hl kwd">length</span><span class="hl std">(x)]</span> <span class="hl opt">+</span> <span class="hl std">unidad_x)</span>
-<span class="hl std">y</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">append</span><span class="hl std">(y, y[</span><span class="hl kwd">length</span><span class="hl std">(y)])</span>
+                <span class="hl com"># Actualizamos posición x</span>
+                <span class="hl std">pasos</span> <span class="hl kwb">&lt;-</span> <span class="hl std">pasos</span> <span class="hl opt">+</span> <span class="hl num">1</span>
+                <span class="hl std">x</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">append</span><span class="hl std">(x, x[</span><span class="hl kwd">length</span><span class="hl std">(x)]</span> <span class="hl opt">+</span> <span class="hl std">unidad_x)</span>
+                <span class="hl std">y</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">append</span><span class="hl std">(y, y[</span><span class="hl kwd">length</span><span class="hl std">(y)])</span>
 
-<span class="hl com"># Si la primera coordenada de la particula cumple abs(x) &gt; 100,</span>
-<span class="hl com"># el proceso finaliza	</span>
-<span class="hl kwa">if</span> <span class="hl std">(</span><span class="hl kwd">abs</span><span class="hl std">(x[</span><span class="hl kwd">length</span><span class="hl std">(x)])</span> <span class="hl opt">&gt;</span> <span class="hl num">100</span><span class="hl std">){</span>
-        <span class="hl std">condicion_alcanzada</span> <span class="hl kwb">&lt;-</span> <span class="hl num">TRUE</span>
-        <span class="hl kwa">break</span>
-<span class="hl std">}</span>
-<span class="hl com"># Si la suma del segundo dado y el tercero es menor que 5,</span>
-<span class="hl com"># el punto se mueve una unidad hacia arriba, si no, lo hace hacia abajo.</span>
-<span class="hl kwa">if</span><span class="hl std">(</span><span class="hl kwd">sum</span><span class="hl std">(tres_dados[</span><span class="hl num">2</span><span class="hl opt">:</span><span class="hl num">3</span><span class="hl std">])</span> <span class="hl opt">&lt;</span> <span class="hl num">5</span><span class="hl std">){</span>
-        <span class="hl std">unidad_y</span> <span class="hl kwb">&lt;-</span> <span class="hl num">1</span>
-<span class="hl std">}</span> <span class="hl kwa">else</span> <span class="hl std">{</span>
-        <span class="hl std">unidad_y</span> <span class="hl kwb">&lt;-</span> <span class="hl opt">-</span><span class="hl num">1</span>
-<span class="hl std">}</span>
+                <span class="hl com"># Si la primera coordenada de la particula cumple abs(x) &gt; 100,</span>
+                <span class="hl com"># el proceso finaliza	</span>
+                <span class="hl kwa">if</span> <span class="hl std">(</span><span class="hl kwd">abs</span><span class="hl std">(x[</span><span class="hl kwd">length</span><span class="hl std">(x)])</span> <span class="hl opt">&gt;</span> <span class="hl num">100</span><span class="hl std">){</span>
+                        <span class="hl std">condicion_alcanzada</span> <span class="hl kwb">&lt;-</span> <span class="hl num">TRUE</span>
+                        <span class="hl kwa">break</span>
+                <span class="hl std">}</span>
+                <span class="hl com"># Si la suma del segundo dado y el tercero es menor que 5,</span>
+                <span class="hl com"># el punto se mueve una unidad hacia arriba, si no, lo hace hacia abajo.</span>
+                <span class="hl kwa">if</span><span class="hl std">(</span><span class="hl kwd">sum</span><span class="hl std">(tres_dados[</span><span class="hl num">2</span><span class="hl opt">:</span><span class="hl num">3</span><span class="hl std">])</span> <span class="hl opt">&lt;</span> <span class="hl num">5</span><span class="hl std">){</span>
+                        <span class="hl std">unidad_y</span> <span class="hl kwb">&lt;-</span> <span class="hl num">1</span>
+                <span class="hl std">}</span> <span class="hl kwa">else</span> <span class="hl std">{</span>
+                        <span class="hl std">unidad_y</span> <span class="hl kwb">&lt;-</span> <span class="hl opt">-</span><span class="hl num">1</span>
+                <span class="hl std">}</span>
 
-<span class="hl com"># Actualizamos posicion y		</span>
-<span class="hl std">pasos</span> <span class="hl kwb">&lt;-</span> <span class="hl std">pasos</span> <span class="hl opt">+</span> <span class="hl num">1</span>
-<span class="hl std">x</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">append</span><span class="hl std">(x, x[</span><span class="hl kwd">length</span><span class="hl std">(x)])</span>
-<span class="hl std">y</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">append</span><span class="hl std">(y, y[</span><span class="hl kwd">length</span><span class="hl std">(y)]</span> <span class="hl opt">+</span> <span class="hl std">unidad_y)</span>
+                <span class="hl com"># Actualizamos posicion y		</span>
+                <span class="hl std">pasos</span> <span class="hl kwb">&lt;-</span> <span class="hl std">pasos</span> <span class="hl opt">+</span> <span class="hl num">1</span>
+                <span class="hl std">x</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">append</span><span class="hl std">(x, x[</span><span class="hl kwd">length</span><span class="hl std">(x)])</span>
+                <span class="hl std">y</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">append</span><span class="hl std">(y, y[</span><span class="hl kwd">length</span><span class="hl std">(y)]</span> <span class="hl opt">+</span> <span class="hl std">unidad_y)</span>
         <span class="hl std">}</span>
 
         <span class="hl kwd">plot</span><span class="hl std">(x,y,</span> <span class="hl kwc">type</span> <span class="hl std">=</span> <span class="hl str">&quot;b&quot;</span><span class="hl std">)</span>
         <span class="hl std">posicion_final</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">paste</span><span class="hl std">(</span><span class="hl str">&quot;(&quot;</span><span class="hl std">, x[</span><span class="hl kwd">length</span><span class="hl std">(x)],</span> <span class="hl str">&quot;,&quot;</span><span class="hl std">, y[</span><span class="hl kwd">length</span><span class="hl std">(y)],</span> <span class="hl str">&quot;)&quot;</span><span class="hl std">)</span>
         <span class="hl std">progresion</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">rbind</span><span class="hl std">(x,y)</span>
         <span class="hl kwd">return</span><span class="hl std">(</span><span class="hl kwd">list</span><span class="hl std">(</span><span class="hl str">&quot;Progresión aleatoria=&quot;</span><span class="hl std">=progresion,</span>
-        <span class="hl str">&quot;Posición final=&quot;</span><span class="hl std">= posicion_final,</span>
-        <span class="hl str">&quot;Condición alcanzada=&quot;</span><span class="hl std">=condicion_alcanzada,</span>
-        <span class="hl str">&quot;Pasos realizados=&quot;</span><span class="hl std">=pasos))</span>
+                        <span class="hl str">&quot;Posición final=&quot;</span><span class="hl std">= posicion_final,</span>
+                        <span class="hl str">&quot;Condición alcanzada=&quot;</span><span class="hl std">=condicion_alcanzada,</span>
+                        <span class="hl str">&quot;Pasos realizados=&quot;</span><span class="hl std">=pasos))</span>
 <span class="hl std">}</span>
 
 <span class="hl com"># Hacemos hincapié en que siempre vamos a limitar como máximo de tiempo 1000, la función devolverá</span>
@@ -1046,23 +1046,23 @@
 
         <span class="hl com"># Entramos en un bucle hasta que alguno gane	 </span>
         <span class="hl kwa">while</span><span class="hl std">(no_ganador){</span>
-<span class="hl std">lanzamiento_moneda</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">sample</span><span class="hl std">(moneda,</span> <span class="hl kwc">size</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">,</span> <span class="hl kwc">replace</span> <span class="hl std">=</span> <span class="hl num">TRUE</span><span class="hl std">)</span>
+                <span class="hl std">lanzamiento_moneda</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">sample</span><span class="hl std">(moneda,</span> <span class="hl kwc">size</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">,</span> <span class="hl kwc">replace</span> <span class="hl std">=</span> <span class="hl num">TRUE</span><span class="hl std">)</span>
 
-<span class="hl kwa">if</span><span class="hl std">(lanzamiento_moneda</span> <span class="hl opt">==</span> <span class="hl str">&quot;Cara&quot;</span><span class="hl std">){</span>
-        <span class="hl std">puntuacion_A</span> <span class="hl kwb">&lt;-</span> <span class="hl std">puntuacion_A</span> <span class="hl opt">+</span> <span class="hl num">1</span>
-<span class="hl std">}</span> <span class="hl kwa">else</span> <span class="hl std">{</span>
-        <span class="hl std">puntuacion_B</span> <span class="hl kwb">&lt;-</span> <span class="hl std">puntuacion_B</span> <span class="hl opt">+</span> <span class="hl num">1</span>
-<span class="hl std">}</span>
+                <span class="hl kwa">if</span><span class="hl std">(lanzamiento_moneda</span> <span class="hl opt">==</span> <span class="hl str">&quot;Cara&quot;</span><span class="hl std">){</span>
+                        <span class="hl std">puntuacion_A</span> <span class="hl kwb">&lt;-</span> <span class="hl std">puntuacion_A</span> <span class="hl opt">+</span> <span class="hl num">1</span>
+                <span class="hl std">}</span> <span class="hl kwa">else</span> <span class="hl std">{</span>
+                        <span class="hl std">puntuacion_B</span> <span class="hl kwb">&lt;-</span> <span class="hl std">puntuacion_B</span> <span class="hl opt">+</span> <span class="hl num">1</span>
+                <span class="hl std">}</span>
 
-<span class="hl kwa">if</span><span class="hl std">(puntuacion_A</span> <span class="hl opt">==</span> <span class="hl std">puntos_necesarios){</span>
-        <span class="hl std">no_ganador</span> <span class="hl kwb">&lt;-</span> <span class="hl num">FALSE</span>
-        <span class="hl std">ganador</span> <span class="hl kwb">&lt;-</span> <span class="hl str">&quot;Ganador: A&quot;</span>
-<span class="hl std">}</span>
+                <span class="hl kwa">if</span><span class="hl std">(puntuacion_A</span> <span class="hl opt">==</span> <span class="hl std">puntos_necesarios){</span>
+                        <span class="hl std">no_ganador</span> <span class="hl kwb">&lt;-</span> <span class="hl num">FALSE</span>
+                        <span class="hl std">ganador</span> <span class="hl kwb">&lt;-</span> <span class="hl str">&quot;Ganador: A&quot;</span>
+                <span class="hl std">}</span>
 
-<span class="hl kwa">if</span><span class="hl std">(puntuacion_B</span> <span class="hl opt">==</span> <span class="hl std">puntos_necesarios){</span>
-        <span class="hl std">no_ganador</span> <span class="hl kwb">&lt;-</span> <span class="hl num">FALSE</span>
-        <span class="hl std">ganador</span> <span class="hl kwb">&lt;-</span> <span class="hl str">&quot;Ganador: B&quot;</span>
-<span class="hl std">}</span>
+                <span class="hl kwa">if</span><span class="hl std">(puntuacion_B</span> <span class="hl opt">==</span> <span class="hl std">puntos_necesarios){</span>
+                        <span class="hl std">no_ganador</span> <span class="hl kwb">&lt;-</span> <span class="hl num">FALSE</span>
+                        <span class="hl std">ganador</span> <span class="hl kwb">&lt;-</span> <span class="hl str">&quot;Ganador: B&quot;</span>
+                <span class="hl std">}</span>
         <span class="hl std">}</span>
 
         <span class="hl kwd">return</span><span class="hl std">(ganador)</span>
@@ -1086,8 +1086,8 @@
         <span class="hl std">prob_B</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">sum</span> <span class="hl std">(n_juegos</span> <span class="hl opt">==</span> <span class="hl str">&quot;Ganador: B&quot;</span><span class="hl std">)</span> <span class="hl opt">/</span> <span class="hl std">n</span>
 
         <span class="hl kwd">return</span><span class="hl std">(</span><span class="hl kwd">list</span><span class="hl std">(</span><span class="hl str">&quot;Frecuencias=&quot;</span><span class="hl std">=freq,</span>
-                <span class="hl str">&quot;Proporción de veces que gana A=&quot;</span><span class="hl std">=prob_A,</span>
-                <span class="hl str">&quot;Proporción de veces que gana B=&quot;</span><span class="hl std">=prob_B))</span>
+                                <span class="hl str">&quot;Proporción de veces que gana A=&quot;</span><span class="hl std">=prob_A,</span>
+                                <span class="hl str">&quot;Proporción de veces que gana B=&quot;</span><span class="hl std">=prob_B))</span>
 <span class="hl std">}</span>
 <span class="hl kwd">n_veces_juego</span><span class="hl std">(</span><span class="hl kwc">n</span> <span class="hl std">=</span> <span class="hl num">98765</span><span class="hl std">)</span>
 </pre></div>
@@ -1184,16 +1184,16 @@
 <span class="hl com"># y devuelve el número de lanzamientos cuyo resultado ha sido un 6.</span>
 
 <span class="hl std">lanzar_dado</span> <span class="hl kwb">=</span> <span class="hl kwa">function</span><span class="hl std">(){</span>
-    <span class="hl std">caras</span> <span class="hl kwb">&lt;-</span> <span class="hl num">1</span><span class="hl opt">:</span><span class="hl num">6</span>
-    <span class="hl com"># Devolvemos el lanzamiento de 1 dado</span>
-    <span class="hl kwd">return</span><span class="hl std">(</span><span class="hl kwd">sample</span><span class="hl std">(caras,</span> <span class="hl kwc">size</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">,</span> <span class="hl kwc">replace</span> <span class="hl std">=</span> <span class="hl num">TRUE</span><span class="hl std">))</span>
+        <span class="hl std">caras</span> <span class="hl kwb">&lt;-</span> <span class="hl num">1</span><span class="hl opt">:</span><span class="hl num">6</span>
+        <span class="hl com"># Devolvemos el lanzamiento de 1 dado</span>
+        <span class="hl kwd">return</span><span class="hl std">(</span><span class="hl kwd">sample</span><span class="hl std">(caras,</span> <span class="hl kwc">size</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">,</span> <span class="hl kwc">replace</span> <span class="hl std">=</span> <span class="hl num">TRUE</span><span class="hl std">))</span>
 <span class="hl std">}</span>
 
 <span class="hl std">lanzar_dado_n_veces</span> <span class="hl kwb">=</span> <span class="hl kwa">function</span><span class="hl std">(</span><span class="hl kwc">n</span> <span class="hl std">=</span> <span class="hl num">10</span><span class="hl std">){</span>
-    <span class="hl std">lanzamientos</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">replicate</span><span class="hl std">(n,</span> <span class="hl kwd">lanzar_dado</span><span class="hl std">())</span>
-    <span class="hl std">suma_de_seis</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">sum</span><span class="hl std">(lanzamientos</span> <span class="hl opt">==</span> <span class="hl num">6</span><span class="hl std">)</span>
+        <span class="hl std">lanzamientos</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">replicate</span><span class="hl std">(n,</span> <span class="hl kwd">lanzar_dado</span><span class="hl std">())</span>
+        <span class="hl std">suma_de_seis</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">sum</span><span class="hl std">(lanzamientos</span> <span class="hl opt">==</span> <span class="hl num">6</span><span class="hl std">)</span>
 
-    <span class="hl kwd">return</span><span class="hl std">(suma_de_seis)</span>
+        <span class="hl kwd">return</span><span class="hl std">(suma_de_seis)</span>
 <span class="hl std">}</span>
 
 <span class="hl kwd">lanzar_dado_n_veces</span><span class="hl std">(</span><span class="hl kwc">n</span> <span class="hl std">=</span> <span class="hl num">4</span><span class="hl std">)</span>
@@ -1205,11 +1205,11 @@
 
 
 <span class="hl std">simulacion_dado</span> <span class="hl kwb">=</span> <span class="hl kwa">function</span><span class="hl std">(</span><span class="hl kwc">j</span> <span class="hl std">=</span> <span class="hl num">10000</span><span class="hl std">,</span> <span class="hl kwc">n</span> <span class="hl std">=</span> <span class="hl num">4</span><span class="hl std">){</span>
-    <span class="hl std">lanzamientos</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">replicate</span><span class="hl std">(j,</span> <span class="hl kwd">lanzar_dado_n_veces</span><span class="hl std">(n))</span>
+        <span class="hl std">lanzamientos</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">replicate</span><span class="hl std">(j,</span> <span class="hl kwd">lanzar_dado_n_veces</span><span class="hl std">(n))</span>
 
-    <span class="hl std">casos_seis</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">sum</span><span class="hl std">(lanzamientos</span> <span class="hl opt">&gt;</span> <span class="hl num">0</span><span class="hl std">)</span> <span class="hl opt">/</span> <span class="hl std">j</span>
+        <span class="hl std">casos_seis</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">sum</span><span class="hl std">(lanzamientos</span> <span class="hl opt">&gt;</span> <span class="hl num">0</span><span class="hl std">)</span> <span class="hl opt">/</span> <span class="hl std">j</span>
 
-    <span class="hl kwd">return</span><span class="hl std">(</span><span class="hl kwd">paste</span><span class="hl std">(</span><span class="hl str">&quot;Proporción de veces que ha salido un 6 con un dado en 4 tiradas: &quot;</span><span class="hl std">, casos_seis))</span>
+        <span class="hl kwd">return</span><span class="hl std">(</span><span class="hl kwd">paste</span><span class="hl std">(</span><span class="hl str">&quot;Proporción de veces que ha salido un 6 con un dado en 4 tiradas: &quot;</span><span class="hl std">, casos_seis))</span>
 <span class="hl std">}</span>
 <span class="hl com"># Contamos las veces que ha salido al menos un 6, como la función lanzar_dado_n_veces devuelve la</span>
 <span class="hl com"># suma de veces que el lanzamiento ha sido un 6, bastará con comprobar los lanzamientos que son mayores</span>
@@ -1227,9 +1227,9 @@
 <span class="hl com"># dados devolvemos la suma de ambos dados, así en lanzar_dos_dados_n_veces para contar</span>
 <span class="hl com"># los lanzamientos que han tenido doble seis comprobaremos aquellos cuya suma es 6+6=12</span>
 <span class="hl std">lanzar_dos_dados</span> <span class="hl kwb">=</span> <span class="hl kwa">function</span><span class="hl std">(){</span>
-    <span class="hl std">caras</span> <span class="hl kwb">&lt;-</span> <span class="hl num">1</span><span class="hl opt">:</span><span class="hl num">6</span>
-    <span class="hl com"># Devolvemos el lanzamiento de 2 dados</span>
-    <span class="hl kwd">return</span><span class="hl std">(</span><span class="hl kwd">sum</span><span class="hl std">(</span><span class="hl kwd">sample</span><span class="hl std">(caras,</span> <span class="hl kwc">size</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl kwc">replace</span> <span class="hl std">=</span> <span class="hl num">TRUE</span><span class="hl std">)))</span>
+        <span class="hl std">caras</span> <span class="hl kwb">&lt;-</span> <span class="hl num">1</span><span class="hl opt">:</span><span class="hl num">6</span>
+        <span class="hl com"># Devolvemos el lanzamiento de 2 dados</span>
+        <span class="hl kwd">return</span><span class="hl std">(</span><span class="hl kwd">sum</span><span class="hl std">(</span><span class="hl kwd">sample</span><span class="hl std">(caras,</span> <span class="hl kwc">size</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl kwc">replace</span> <span class="hl std">=</span> <span class="hl num">TRUE</span><span class="hl std">)))</span>
 <span class="hl std">}</span>
 
 <span class="hl kwd">lanzar_dos_dados</span><span class="hl std">()</span>
@@ -1237,10 +1237,10 @@
 <div class="output"><pre class="knitr r">## [1] 6
 </pre></div>
 <div class="source"><pre class="knitr r"><span class="hl std">lanzar_dos_dados_n_veces</span> <span class="hl kwb">=</span> <span class="hl kwa">function</span><span class="hl std">(</span><span class="hl kwc">n</span> <span class="hl std">=</span> <span class="hl num">10</span><span class="hl std">){</span>
-    <span class="hl std">lanzamientos</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">replicate</span><span class="hl std">(n,</span> <span class="hl kwd">lanzar_dos_dados</span><span class="hl std">())</span>
-    <span class="hl std">suma_dos_seis</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">sum</span><span class="hl std">(lanzamientos</span> <span class="hl opt">==</span> <span class="hl num">12</span><span class="hl std">)</span>
+        <span class="hl std">lanzamientos</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">replicate</span><span class="hl std">(n,</span> <span class="hl kwd">lanzar_dos_dados</span><span class="hl std">())</span>
+        <span class="hl std">suma_dos_seis</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">sum</span><span class="hl std">(lanzamientos</span> <span class="hl opt">==</span> <span class="hl num">12</span><span class="hl std">)</span>
 
-    <span class="hl kwd">return</span><span class="hl std">(suma_dos_seis)</span>
+        <span class="hl kwd">return</span><span class="hl std">(suma_dos_seis)</span>
 <span class="hl std">}</span>
 
 <span class="hl kwd">lanzar_dos_dados_n_veces</span><span class="hl std">(</span><span class="hl kwc">n</span><span class="hl std">=</span><span class="hl num">24</span><span class="hl std">)</span>
@@ -1251,11 +1251,11 @@
 <span class="hl com"># la cuál nos permite replicar j veces el experimento de lanzar n veces 2 dados.</span>
 <span class="hl com"># Devolvemos la proporción de veces cuyos resultados han sido al menos un doble seis en n tiradas</span>
 <span class="hl std">simulacion_dos_dados</span> <span class="hl kwb">=</span> <span class="hl kwa">function</span><span class="hl std">(</span><span class="hl kwc">j</span> <span class="hl std">=</span> <span class="hl num">10000</span><span class="hl std">,</span> <span class="hl kwc">n</span> <span class="hl std">=</span> <span class="hl num">24</span><span class="hl std">){</span>
-    <span class="hl std">lanzamientos</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">replicate</span><span class="hl std">(j,</span> <span class="hl kwd">lanzar_dos_dados_n_veces</span><span class="hl std">(n))</span>
+        <span class="hl std">lanzamientos</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">replicate</span><span class="hl std">(j,</span> <span class="hl kwd">lanzar_dos_dados_n_veces</span><span class="hl std">(n))</span>
 
-    <span class="hl std">casos_dos_seis</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">sum</span><span class="hl std">(lanzamientos</span> <span class="hl opt">&gt;</span> <span class="hl num">0</span><span class="hl std">)</span> <span class="hl opt">/</span> <span class="hl std">j</span>
+        <span class="hl std">casos_dos_seis</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">sum</span><span class="hl std">(lanzamientos</span> <span class="hl opt">&gt;</span> <span class="hl num">0</span><span class="hl std">)</span> <span class="hl opt">/</span> <span class="hl std">j</span>
 
-    <span class="hl kwd">return</span><span class="hl std">(</span><span class="hl kwd">paste</span><span class="hl std">(</span><span class="hl str">&quot;Proporción de veces que han salido dobles 6 con dos dados en 24 tiradas: &quot;</span><span class="hl std">, casos_dos_seis))</span>
+        <span class="hl kwd">return</span><span class="hl std">(</span><span class="hl kwd">paste</span><span class="hl std">(</span><span class="hl str">&quot;Proporción de veces que han salido dobles 6 con dos dados en 24 tiradas: &quot;</span><span class="hl std">, casos_dos_seis))</span>
 <span class="hl std">}</span>
 <span class="hl com"># 6) Ejecutando, </span>
 <span class="hl kwd">simulacion_dos_dados</span><span class="hl std">(</span><span class="hl kwc">j</span> <span class="hl std">=</span> <span class="hl num">10000</span><span class="hl std">,</span> <span class="hl kwc">n</span> <span class="hl std">=</span> <span class="hl num">24</span><span class="hl std">)</span>

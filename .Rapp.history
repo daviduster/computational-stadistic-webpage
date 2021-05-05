@@ -1,0 +1,99 @@
+dong2 = function(numero = 100){}
+dong2 <- edit()
+dong2 <- edit(dong2)
+dong2
+dong2()
+dong2 <- edit(dong2)
+dong2.v <- edit(dong2)
+dong2.v
+dong2.v()
+dong2
+sample(4,1, p=c(1,85,7,7))
+dong2.v
+dong3.v <- edit(dong2.v)
+dong3
+dong3.v
+dong3.v()
+dong3.v <- edit(dong3.v)
+dong3.v
+dong3.v()
+dong3 <- edit(dong3.v)
+sample(100,1)
+dong3 <- edit(dong3)
+dong3.v <- edit(dong3.v)
+dong3.v
+dong3.v()
+ls
+la
+ls -a
+ls
+help(ls)
+source("/Users/davidalbertomartinvela/git/estadistica-computacional/dong3_improved.R")
+dong3.v_improved
+dong3.v_improved()
+source("/Users/davidalbertomartinvela/git/estadistica-computacional/dong3_improved.R")
+dong3.v_improved()
+dong3_improved()
+x <- cbind(x1 = 3, x2 = c(4:1, 2:5))
+x
+col.sums <- apply(x,2,sum)
+col.sums
+bolas <- rep( c("Roja", "Blanca", "Negra"), times = c(5,8,3))
+simulacion <- replicate(19, sample(bolas, size = n_bolas, replace = TRUE))
+simulacion <- replicate(19, sample(bolas, size = 5, replace = TRUE))
+simulacion
+x <- apply(simulacion,2,sum)
+search()
+.first
+first
+first()
+.first()
+ls
+x11()
+help()
+install.packages('knitr', dependencies = TRUE)
+library(knitr
+)
+getwd()
+setwd("/Users/davidalbertomartinvela/git/estadistica-computacional/minimal-resume/")
+library(knitr)
+knit("index.Rhtml")
+knit("index.Rhtml")
+knit("index.Rhtml")
+knit("index.Rhtml")
+knit("index.Rhtml")
+knit("index.Rhtml")
+knit("index.Rhtml")
+knit("index.Rhtml")
+knit("index.Rhtml")
+knit("index.Rhtml")
+setwd(""/Users/davidalbertomartinvela/git/computational_stadistic-webpage/"")
+setwd(""/Users/davidalbertomartinvela/git/computational_stadistic-webpage/")
+=
+""
+"
+setwd("/Users/davidalbertomartinvela/git/computational_stadistic-webpage/")
+setwd("/Users/davidalbertomartinvela/git/computational-stadistic-webpage/")
+knit("index.Rhtml")
+knit("index.Rhtml")
+knit("index.Rhtml")
+knit("index.Rhtml")
+knit("index.Rhtml")
+knit("index.Rhtml")
+knit("index.Rhtml")
+knit("index.Rhtml")
+knit("index.Rhtml")
+knit("index.Rhtml")
+knit("index.Rhtml")
+knit("index.Rhtml")
+knit("index.Rhtml")
+knit("index.Rhtml")
+knit("index.Rhtml")
+knit("index.Rhtml")
+knit("index.Rhtml")
+knit("index.Rhtml")
+knit("index.Rhtml")
+knit("index.Rhtml")
+knit("index.Rhtml")
+knit("index.Rhtml")
+knit("index.Rhtml")

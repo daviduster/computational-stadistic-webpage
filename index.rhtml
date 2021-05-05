@@ -70,11 +70,11 @@
 			prob_cara_cruz <- sum((moneda_1 == "Cara" & moneda_2 == "Cruz") | (moneda_1 == "Cruz" & moneda_2 == "Cara")) / n
 			
 			return(list(
-				"Resultados Moneda 1" = table(moneda_1),
-				"Resultados Moneda 2" = table(moneda_2),
-				"Probabilidad de sacar ambas cara = " = prob_cara_cara, 
-				"Probabilidad de sacar ambas cruz" = prob_cruz_cruz, 
-				"Probabilidad de sacar cruz y cara" = prob_cara_cruz))
+				"Resultados Moneda 1 =" = table(moneda_1),
+				"Resultados Moneda 2 =" = table(moneda_2),
+				"Probabilidad de sacar ambas cara =" = prob_cara_cara, 
+				"Probabilidad de sacar ambas cruz=" = prob_cruz_cruz, 
+				"Probabilidad de sacar cruz y cara=" = prob_cara_cruz))
 		}
 				
 		# Para probar la función solo hay que cargar el fichero en R y llamarla con su nombre junto al 
@@ -155,7 +155,7 @@
 				"Frecuencias segundo dado=" = freq_2, 
 				"Frecuencias relativas primer dado=" = freq_relativa_1, 
 				"Frecuencias relativas segundo dado=" =freq_relativa_2, 
-				"Probabilidad de que la suma sea mayor que 9 = " =prob_9) )
+				"Probabilidad de que la suma sea mayor que 9=" =prob_9) )
 		}
 
 
@@ -215,9 +215,9 @@
 			# Probabilidad de que sea un numero impar
 			prob_impar <- sum( (dice %% 2) != 0) / n
 
-			return(list("Frecuencias="=freq,
-				"Probabilidad de sacar un 6 = " = prob_6, 
-				"Probabilidad de que el numero sea impar = " = prob_impar))
+			return(list("Frecuencias=" = freq,
+				"Probabilidad de sacar un 6=" = prob_6, 
+				"Probabilidad de que el numero sea impar=" = prob_impar))
 		}
 
 		# Podemos visualizar esto ejecutando la función dado_truncado con un gran numero de repeticiones 
@@ -265,7 +265,7 @@
 				"Frecuencias segundo dado=" = freq_2, 
 				"Frecuencias relativas primer dado=" = freq_relativa_1, 
 				"Frecuencias relativas segundo dado=" =freq_relativa_2, 
-				"Probabilidad de que la suma sea mayor que 9 = " =prob_9) )
+				"Probabilidad de que la suma sea mayor que 9=" =prob_9) )
 		}
 		# es mucho mayor al inicio (caras de 1) y mucho más pequeña en los cubos del final, en 
 		# las caras superiores, podemos ver esto ejecutando la función simular_dos_dados_truncados
@@ -298,138 +298,138 @@
 		</div>
 		<!--begin.rcode
 
-# Solución:  Para probar las funciones solo hay que cargar el fichero y 
-# llamarlas con su nombre. 
+		# Solución:  Para probar las funciones solo hay que cargar el fichero y 
+		# llamarlas con su nombre. 
 
-# Primero, creamos una función extraer_5_bolas para simular la extracción de 5 bolas de una urna,
-# los argumentos de esta función son un boolean para indicar si esta extracción es con o sin
-# reemplazamiento. 
+		# Primero, creamos una función extraer_5_bolas para simular la extracción de 5 bolas de una urna,
+		# los argumentos de esta función son un boolean para indicar si esta extracción es con o sin
+		# reemplazamiento. 
 
-extraer_5_bolas = function(reemplazamiento = FALSE){
-	# Generamos vector de bolas
-	bolas <- rep( c("Roja", "Blanca", "Negra"), times = c(5,8,3))
-	# Número de bolas
-	n_bolas = 5
+		extraer_5_bolas = function(reemplazamiento = FALSE){
+			# Generamos vector de bolas
+			bolas <- rep( c("Roja", "Blanca", "Negra"), times = c(5,8,3))
+			# Número de bolas
+			n_bolas = 5
 
-	return(sample(bolas, size = n_bolas, replace = reemplazamiento))
-}
-# A esta función se le puede llamar:
-extraer_5_bolas(reemplazamiento = FALSE)
-extraer_5_bolas(reemplazamiento = TRUE)
-# Aunque se pedían sendas funciones, ya que es repetir código pero cambiando el argumento
-# he optado por unificarlas en una.
+			return(sample(bolas, size = n_bolas, replace = reemplazamiento))
+		}
+		# A esta función se le puede llamar:
+		extraer_5_bolas(reemplazamiento = FALSE)
+		extraer_5_bolas(reemplazamiento = TRUE)
+		# Aunque se pedían sendas funciones, ya que es repetir código pero cambiando el argumento
+		# he optado por unificarlas en una.
 
-# Seguidamente, definimos otra función, extraccion_urna para simular n_repeticiones extracciones 5
-# bolas con o sin reemplazamiento, lo cuál controlamos con un parámetro boleano reemplazamiento.
-extraccion_urna = function(n_repeticiones = 16, reemplazamiento = FALSE){
+		# Seguidamente, definimos otra función, extraccion_urna para simular n_repeticiones extracciones 5
+		# bolas con o sin reemplazamiento, lo cuál controlamos con un parámetro boleano reemplazamiento.
+		extraccion_urna = function(n_repeticiones = 16, reemplazamiento = FALSE){
 
 
-	# Repeticiones n_repeticiones veces la extracción de n_bolas 
-	simulacion <- replicate(n_repeticiones, extraer_5_bolas(reemplazamiento = reemplazamiento))
+			# Repeticiones n_repeticiones veces la extracción de n_bolas 
+			simulacion <- replicate(n_repeticiones, extraer_5_bolas(reemplazamiento = reemplazamiento))
 
-	# Vemos los casos cuya probabilidad hay que calcular
-	casos_2_blancas <- 0
-	casos_2_blancas_1_roja <- 0
-	casos_al_menos_2_negras <- 0
+			# Vemos los casos cuya probabilidad hay que calcular
+			casos_2_blancas <- 0
+			casos_2_blancas_1_roja <- 0
+			casos_al_menos_2_negras <- 0
 
-	for(i in 1:n_repeticiones) {
+			for(i in 1:n_repeticiones) {
 
-		if(length(which(simulacion[,i] == "Blanca")) == 2){
-			casos_2_blancas <- casos_2_blancas + 1
+				if(length(which(simulacion[,i] == "Blanca")) == 2){
+					casos_2_blancas <- casos_2_blancas + 1
+				}
+
+				if(length(which(simulacion[,i] == "Blanca")) == 2 && length(which(simulacion[,i] == "Roja")) == 1){
+					casos_2_blancas_1_roja <- casos_2_blancas_1_roja + 1
+				}
+
+				if(length(which(simulacion[,i] == "Negra")) > 1){
+					casos_al_menos_2_negras <- casos_al_menos_2_negras + 1
+				}
+			}
+			
+			# La probabilidad es los casos favorables entre el total
+			prob_2_blancas <- casos_2_blancas / n_repeticiones
+			prob_2_blancas_1_roja <- casos_2_blancas_1_roja / n_repeticiones
+			prob_al_menos_2_negras <- casos_al_menos_2_negras / n_repeticiones
+
+
+			return(list("Frecuencias="=table(simulacion), 
+				"Probabilidad 2 blancas="=prob_2_blancas, 
+				"Probabilidad 2 blancas y 1 roja="=prob_2_blancas_1_roja, 
+				"Probabilidad al menos 2 negras="=prob_al_menos_2_negras))
 		}
 
-		if(length(which(simulacion[,i] == "Blanca")) == 2 && length(which(simulacion[,i] == "Roja")) == 1){
-			casos_2_blancas_1_roja <- casos_2_blancas_1_roja + 1
-		}
+		# El calculo empírico de los sucesos que se piden anteriormente es la suma de las 
+		# veces que se producen cada uno de ellos entre el total. Para ello en la función recorremos las columnas
+		# del parámetro simulacion, el cual contiene el conjunto de experimentos de 5 en 5 n_repeticiones,
+		# contamos los casos que se piden y calculamos la probabilidad dividiendo entre el total.
+		# Finalmente la función devuelve una tabla con las frecuencias de cada bola, junto a las probabilidades
+		# calculadas empíricamente mediante las observaciones.
 
-		if(length(which(simulacion[,i] == "Negra")) > 1){
-			casos_al_menos_2_negras <- casos_al_menos_2_negras + 1
-		}
-	}
-	
-	# La probabilidad es los casos favorables entre el total
-	prob_2_blancas <- casos_2_blancas / n_repeticiones
-	prob_2_blancas_1_roja <- casos_2_blancas_1_roja / n_repeticiones
-	prob_al_menos_2_negras <- casos_al_menos_2_negras / n_repeticiones
+		# Un ejemplo de ejecución sería:
+		extraccion_urna(n_repeticiones = 15000, reemplazamiento = TRUE)
+		extraccion_urna(n_repeticiones = 15000, reemplazamiento = FALSE)
 
+		# Segundo, las probabilidades teóricas pueden calcularse con la distribución multinomial (con reemplazamiento)
+		# y la hipergeométrica Multivariante (sin reemplazamiento), sumando las probabilidades de los posibles casos 
+		# que se piden. Para utilizar la distribución hipergeométrica en R hemos tenido que instalar el paquete extraDistr
+		# mediante la orden:
+		# install.packages("extraDistr")
+		# Actualmente esta comentada en el código pero si no dispone de ese paquete se puede descomentar para la función 
+		# instale el paquete.
 
-	return(list("Frecuencias="=table(simulacion), 
-		"Probabilidad 2 blancas="=prob_2_blancas, 
-		"Probabilidad 2 blancas y 1 roja="=prob_2_blancas_1_roja, 
-		"Probabilidad al menos 2 negras="=prob_al_menos_2_negras))
-}
+		probabilidades_teoricas = function(reemplazamiento = FALSE){		
+			
+			n_bolas <- c("Blanca" = 8, "Roja" = 5, "Negra" = 3)
+			extracciones <- 5
 
-# El calculo empírico de los sucesos que se piden anteriormente es la suma de las 
-# veces que se producen cada uno de ellos entre el total. Para ello en la función recorremos las columnas
-# del parámetro simulacion, el cual contiene el conjunto de experimentos de 5 en 5 n_repeticiones,
-# contamos los casos que se piden y calculamos la probabilidad dividiendo entre el total.
-# Finalmente la función devuelve una tabla con las frecuencias de cada bola, junto a las probabilidades
-# calculadas empíricamente mediante las observaciones.
+			if(reemplazamiento){
+				# Probabilidad 2 blancas, suma de la probabilidad de cada caso
+				prob_2_blancas <- dmultinom(x=c("Blanca" = 2, "Roja" = 3, "Negra" = 0), prob = n_bolas) + 
+						dmultinom(x=c("Blanca" = 2, "Roja" = 2, "Negra" = 1), prob = n_bolas) +
+						dmultinom(x=c("Blanca" = 2, "Roja" = 1, "Negra" = 2), prob = n_bolas) +
+						dmultinom(x=c("Blanca" = 2, "Roja" = 0, "Negra" = 3), prob = n_bolas);
 
-# Un ejemplo de ejecución sería:
-extraccion_urna(n_repeticiones = 15000, reemplazamiento = TRUE)
-extraccion_urna(n_repeticiones = 15000, reemplazamiento = FALSE)
+				# Probabilidad 2 blancas 1 roja, suma de la probabilidad de cada caso	
+				prob_2_blancas_1_roja <- dmultinom(x=c("Blanca" = 2, "Roja" = 1, "Negra" = 2), prob = n_bolas);
 
-# Segundo, las probabilidades teóricas pueden calcularse con la distribución multinomial (con reemplazamiento)
-# y la hipergeométrica Multivariante (sin reemplazamiento), sumando las probabilidades de los posibles casos 
-# que se piden. Para utilizar la distribución hipergeométrica en R hemos tenido que instalar el paquete extraDistr
-# mediante la orden:
-install.packages("extraDistr")
-# Actualmente esta comentada en el código pero si no dispone de ese paquete se puede descomentar para la función 
-# instale el paquete.
+				# Probabilidad al menos 2 negras, suma de la probabilidad de cada caso
+				prob_al_menos_2_negras <- dmultinom(x=c("Blanca" = 0, "Roja" = 2, "Negra" = 3), prob = n_bolas) + 
+							dmultinom(x=c("Blanca" = 1, "Roja" = 1, "Negra" = 3), prob = n_bolas) + 
+							dmultinom(x=c("Blanca" = 2, "Roja" = 0, "Negra" = 3), prob = n_bolas) + 
+							dmultinom(x=c("Blanca" = 0, "Roja" = 3, "Negra" = 2), prob = n_bolas) + 
+							dmultinom(x=c("Blanca" = 1, "Roja" = 2, "Negra" = 2), prob = n_bolas) + 
+							dmultinom(x=c("Blanca" = 2, "Roja" = 1, "Negra" = 2), prob = n_bolas) + 
+							dmultinom(x=c("Blanca" = 3, "Roja" = 0, "Negra" = 2), prob = n_bolas);
+			} else {
+				# install.packages("extraDistr");
+				library("extraDistr");
+			
+				prob_2_blancas <- dmvhyper(x=c("Blanca" = 2, "Roja" = 3, "Negra" = 0), n = n_bolas, k = extracciones) + 
+						dmvhyper(x=c("Blanca" = 2, "Roja" = 2, "Negra" = 1), n = n_bolas, k = extracciones) +
+						dmvhyper(x=c("Blanca" = 2, "Roja" = 1, "Negra" = 2), n = n_bolas, k = extracciones) +
+						dmvhyper(x=c("Blanca" = 2, "Roja" = 0, "Negra" = 3), n = n_bolas, k = extracciones);
 
-probabilidades_teoricas = function(reemplazamiento = FALSE){		
-	
-	n_bolas <- c("Blanca" = 8, "Roja" = 5, "Negra" = 3)
-	extracciones <- 5
+				# Probabilidad 2 blancas 1 roja, suma de la probabilidad de cada caso	
+				prob_2_blancas_1_roja <- dmvhyper(x=c("Blanca" = 2, "Roja" = 1, "Negra" = 2), n = n_bolas, k = extracciones);
 
-	if(reemplazamiento){
-		# Probabilidad 2 blancas, suma de la probabilidad de cada caso
-		prob_2_blancas <- dmultinom(x=c("Blanca" = 2, "Roja" = 3, "Negra" = 0), prob = n_bolas) + 
-				dmultinom(x=c("Blanca" = 2, "Roja" = 2, "Negra" = 1), prob = n_bolas) +
-				dmultinom(x=c("Blanca" = 2, "Roja" = 1, "Negra" = 2), prob = n_bolas) +
-				dmultinom(x=c("Blanca" = 2, "Roja" = 0, "Negra" = 3), prob = n_bolas);
-
-		# Probabilidad 2 blancas 1 roja, suma de la probabilidad de cada caso	
-		prob_2_blancas_1_roja <- dmultinom(x=c("Blanca" = 2, "Roja" = 1, "Negra" = 2), prob = n_bolas);
-
-		# Probabilidad al menos 2 negras, suma de la probabilidad de cada caso
-		prob_al_menos_2_negras <- dmultinom(x=c("Blanca" = 0, "Roja" = 2, "Negra" = 3), prob = n_bolas) + 
-					dmultinom(x=c("Blanca" = 1, "Roja" = 1, "Negra" = 3), prob = n_bolas) + 
-					dmultinom(x=c("Blanca" = 2, "Roja" = 0, "Negra" = 3), prob = n_bolas) + 
-					dmultinom(x=c("Blanca" = 0, "Roja" = 3, "Negra" = 2), prob = n_bolas) + 
-					dmultinom(x=c("Blanca" = 1, "Roja" = 2, "Negra" = 2), prob = n_bolas) + 
-					dmultinom(x=c("Blanca" = 2, "Roja" = 1, "Negra" = 2), prob = n_bolas) + 
-					dmultinom(x=c("Blanca" = 3, "Roja" = 0, "Negra" = 2), prob = n_bolas);
-	} else {
-		# install.packages("extraDistr");
-		library("extraDistr");
-	
-		prob_2_blancas <- dmvhyper(x=c("Blanca" = 2, "Roja" = 3, "Negra" = 0), n = n_bolas, k = extracciones) + 
-				dmvhyper(x=c("Blanca" = 2, "Roja" = 2, "Negra" = 1), n = n_bolas, k = extracciones) +
-				dmvhyper(x=c("Blanca" = 2, "Roja" = 1, "Negra" = 2), n = n_bolas, k = extracciones) +
-				dmvhyper(x=c("Blanca" = 2, "Roja" = 0, "Negra" = 3), n = n_bolas, k = extracciones);
-
-		# Probabilidad 2 blancas 1 roja, suma de la probabilidad de cada caso	
-		prob_2_blancas_1_roja <- dmvhyper(x=c("Blanca" = 2, "Roja" = 1, "Negra" = 2), n = n_bolas, k = extracciones);
-
-		# Probabilidad al menos 2 negras, suma de la probabilidad de cada caso
-		prob_al_menos_2_negras <- dmvhyper(x=c("Blanca" = 0, "Roja" = 2, "Negra" = 3), n = n_bolas, k = extracciones) + 
-					dmvhyper(x=c("Blanca" = 1, "Roja" = 1, "Negra" = 3), n = n_bolas, k = extracciones) + 
-					dmvhyper(x=c("Blanca" = 2, "Roja" = 0, "Negra" = 3), n = n_bolas, k = extracciones) + 
-					dmvhyper(x=c("Blanca" = 0, "Roja" = 3, "Negra" = 2), n = n_bolas, k = extracciones) + 
-					dmvhyper(x=c("Blanca" = 1, "Roja" = 2, "Negra" = 2), n = n_bolas, k = extracciones) + 
-					dmvhyper(x=c("Blanca" = 2, "Roja" = 1, "Negra" = 2), n = n_bolas, k = extracciones) + 
-					dmvhyper(x=c("Blanca" = 3, "Roja" = 0, "Negra" = 2), n = n_bolas, k = extracciones);
-	}
-	
-	return(list("Probabilidad 2 blancas="=prob_2_blancas, 
-		"Probabilidad 2 blancas y 1 roja="=prob_2_blancas_1_roja, 
-		"Probabilidad al menos 2 negras="=prob_al_menos_2_negras))
-} 
-# Para llamar a la función basta con escribir su nombre junto al tipo de reemplazamiento que se desea
-probabilidades_teoricas(reemplazamiento = TRUE)
-probabilidades_teoricas(reemplazamiento = FALSE)
+				# Probabilidad al menos 2 negras, suma de la probabilidad de cada caso
+				prob_al_menos_2_negras <- dmvhyper(x=c("Blanca" = 0, "Roja" = 2, "Negra" = 3), n = n_bolas, k = extracciones) + 
+							dmvhyper(x=c("Blanca" = 1, "Roja" = 1, "Negra" = 3), n = n_bolas, k = extracciones) + 
+							dmvhyper(x=c("Blanca" = 2, "Roja" = 0, "Negra" = 3), n = n_bolas, k = extracciones) + 
+							dmvhyper(x=c("Blanca" = 0, "Roja" = 3, "Negra" = 2), n = n_bolas, k = extracciones) + 
+							dmvhyper(x=c("Blanca" = 1, "Roja" = 2, "Negra" = 2), n = n_bolas, k = extracciones) + 
+							dmvhyper(x=c("Blanca" = 2, "Roja" = 1, "Negra" = 2), n = n_bolas, k = extracciones) + 
+							dmvhyper(x=c("Blanca" = 3, "Roja" = 0, "Negra" = 2), n = n_bolas, k = extracciones);
+			}
+			
+			return(list("Probabilidad 2 blancas="=prob_2_blancas, 
+				"Probabilidad 2 blancas y 1 roja="=prob_2_blancas_1_roja, 
+				"Probabilidad al menos 2 negras="=prob_al_menos_2_negras))
+		} 
+		# Para llamar a la función basta con escribir su nombre junto al tipo de reemplazamiento que se desea
+		probabilidades_teoricas(reemplazamiento = TRUE)
+		probabilidades_teoricas(reemplazamiento = FALSE)
 		end.rcode-->
 	</div>
 
@@ -453,85 +453,85 @@ probabilidades_teoricas(reemplazamiento = FALSE)
 		</div>
 		<!--begin.rcode
 
-# Solución:  Para probar las funciones solo hay que cargar el fichero y 
-# llamarlas con su nombre y argumentos
-# Primero, si la probabilidad de que salga cara es tres veces la probabilidad de que
-# salga cruz, sea P[Cara] = 3*P[Cruz] = p. Entonces, como P[Cara] + P[Cruz] = 1, obtenemos
-# 3(1-p) = p y p = 3/4, por lo tanto una secuencia de dos monedas independientes:
-# Pr[Cara Cara]=(3/4)^2=9/16
-# Pr[Cara Cruz]=(3/4)(1/4)=3/16
-# Pr[Cruz Cara]=(1/4)(3/4)=3/16
-# Pr[Cruz Cruz]=(1/4)^2=1/16
-# Pero claro, si después de dos lanzamientos de moneda no obtenemos ni Cara Cruz ni
-# Cruz Cara, entonces lanzamos las dos monedas de nuevo, luego como la probabilidad
-# de que P[Cara Cruz] = P[Cruz Cara], debemos de tener que
-# Pr[X=1]=Pr[X=2]=1/2
-# También podemos calcular esto así:
-# Pr[X=1]=Pr[Cara Cruz] / (Pr[Cara Cruz]+Pr[Cruz Cara])=(3/16)(6/16)=1/2,
-# y de igual manera con Pr[X=2]
+		# Solución:  Para probar las funciones solo hay que cargar el fichero y 
+		# llamarlas con su nombre y argumentos
+		# Primero, si la probabilidad de que salga cara es tres veces la probabilidad de que
+		# salga cruz, sea P[Cara] = 3*P[Cruz] = p. Entonces, como P[Cara] + P[Cruz] = 1, obtenemos
+		# 3(1-p) = p y p = 3/4, por lo tanto una secuencia de dos monedas independientes:
+		# Pr[Cara Cara]=(3/4)^2=9/16
+		# Pr[Cara Cruz]=(3/4)(1/4)=3/16
+		# Pr[Cruz Cara]=(1/4)(3/4)=3/16
+		# Pr[Cruz Cruz]=(1/4)^2=1/16
+		# Pero claro, si después de dos lanzamientos de moneda no obtenemos ni Cara Cruz ni
+		# Cruz Cara, entonces lanzamos las dos monedas de nuevo, luego como la probabilidad
+		# de que P[Cara Cruz] = P[Cruz Cara], debemos de tener que
+		# Pr[X=1]=Pr[X=2]=1/2
+		# También podemos calcular esto así:
+		# Pr[X=1]=Pr[Cara Cruz] / (Pr[Cara Cruz]+Pr[Cruz Cara])=(3/16)(6/16)=1/2,
+		# y de igual manera con Pr[X=2]
 
-# Esta es la forma típica de simular un lanzamiento de moneda justo utilizando 
-# una moneda injusta, y esa sería nuestra función de densidad / masa de probabilidad
+		# Esta es la forma típica de simular un lanzamiento de moneda justo utilizando 
+		# una moneda injusta, y esa sería nuestra función de densidad / masa de probabilidad
 
-# Para simular esta variable aleatoria, creamos una función recursiva (que se 
-# llama a ella misma) lanzas_dos_monedas_truncadas
-# sin argumento, la cuál recrea el lanzamiento de la moneda truncada dos veces 
-# añadiendo la condición de que si no sale ni el caso 1 ni el caso 2, repetimos de nuevo el 
-# lanzamiento de las dos monedas hasta que salga el caso 1 o el caso 2.
-lanzas_dos_monedas_truncadas = function(){
-	moneda <- c("Cara", "Cruz")
-	# Lanzamiento de dos monedas
-	dos_monedas <- sample(moneda, prob = c(3/4,1/4), size = 2, replace = TRUE)
-	
-	# Condiciones que tenemos que comprobar 
-	cara_cruz <- dos_monedas[1] == "Cara" && dos_monedas[2] == "Cruz"
-	cruz_cara <- dos_monedas[1] == "Cruz" && dos_monedas[2] == "Cara"
-	
-	# Se tiene que obtener cara|cruz o cruz|cara, de otra manera volvemos a
-	# lanzar la moneda dos veces
-	if( cara_cruz || cruz_cara){
-		return(dos_monedas)
-	}	else {
-		return(lanzas_dos_monedas_truncadas())
-	}
-}
-# La función (aunque no es necesario) puede llamarse de la siguiente manera.
-lanzas_dos_monedas_truncadas()
-
-# Después de crear esta función, creamos otra función simular_dos_monedas con el argumento 
-# n veces que queremos repetir el lanzamiento de las dos monedas, hacemos detalle en que a
-# la función replicate le pasamos la función anterior. Contamos los casos que se cumple 
-# el caso 1 o el caso 2 y vemos la proporción de estos, una ejecución con un alto número de 
-# repeticiones hará que los valores observados coincidan con los teóricos.
-simular_dos_monedas = function(n = 10){
-	# Simulamos variable aleatoria
-	simulacion <- replicate(n, lanzas_dos_monedas_truncadas())
-	
-	# Casos favorables
-	casos_cara_cruz <- 0
-	casos_cruz_cara <- 0
-	for (i in 1:n){
-		if (simulacion[,i][1] == "Cara" && simulacion[,i][2] == "Cruz"){
-			casos_cara_cruz <- 	casos_cara_cruz + 1
+		# Para simular esta variable aleatoria, creamos una función recursiva (que se 
+		# llama a ella misma) lanzas_dos_monedas_truncadas
+		# sin argumento, la cuál recrea el lanzamiento de la moneda truncada dos veces 
+		# añadiendo la condición de que si no sale ni el caso 1 ni el caso 2, repetimos de nuevo el 
+		# lanzamiento de las dos monedas hasta que salga el caso 1 o el caso 2.
+		lanzas_dos_monedas_truncadas = function(){
+			moneda <- c("Cara", "Cruz")
+			# Lanzamiento de dos monedas
+			dos_monedas <- sample(moneda, prob = c(3/4,1/4), size = 2, replace = TRUE)
+			
+			# Condiciones que tenemos que comprobar 
+			cara_cruz <- dos_monedas[1] == "Cara" && dos_monedas[2] == "Cruz"
+			cruz_cara <- dos_monedas[1] == "Cruz" && dos_monedas[2] == "Cara"
+			
+			# Se tiene que obtener cara|cruz o cruz|cara, de otra manera volvemos a
+			# lanzar la moneda dos veces
+			if( cara_cruz || cruz_cara){
+				return(dos_monedas)
+			}	else {
+				return(lanzas_dos_monedas_truncadas())
+			}
 		}
-		
-		if (simulacion[,i][1] == "Cruz" && simulacion[,i][2] == "Cara"){
-			casos_cruz_cara <- 	casos_cruz_cara + 1
-		}		
-		
-	# Proporcion 
-	prob_cara_cruz <- casos_cara_cruz / n
-	prob_cruz_cara <- casos_cruz_cara / n
-	
-	}
-	
-	return(list("Frecuencias="=table(simulacion), 
-		"Proporción primera cara segunda cruz ="=prob_cara_cruz, 
-		"Proporción primera cruz segunda cara ="=prob_cruz_cara))
-}
-# Un ejemplo de ejecución es:
-simular_dos_monedas(n = 15000)
-# Vemos que los valores observados son muy parecidos a los teóricos, 1/2
+		# La función (aunque no es necesario) puede llamarse de la siguiente manera.
+		lanzas_dos_monedas_truncadas()
+
+		# Después de crear esta función, creamos otra función simular_dos_monedas con el argumento 
+		# n veces que queremos repetir el lanzamiento de las dos monedas, hacemos detalle en que a
+		# la función replicate le pasamos la función anterior. Contamos los casos que se cumple 
+		# el caso 1 o el caso 2 y vemos la proporción de estos, una ejecución con un alto número de 
+		# repeticiones hará que los valores observados coincidan con los teóricos.
+		simular_dos_monedas = function(n = 10){
+			# Simulamos variable aleatoria
+			simulacion <- replicate(n, lanzas_dos_monedas_truncadas())
+			
+			# Casos favorables
+			casos_cara_cruz <- 0
+			casos_cruz_cara <- 0
+			for (i in 1:n){
+				if (simulacion[,i][1] == "Cara" && simulacion[,i][2] == "Cruz"){
+					casos_cara_cruz <- 	casos_cara_cruz + 1
+				}
+				
+				if (simulacion[,i][1] == "Cruz" && simulacion[,i][2] == "Cara"){
+					casos_cruz_cara <- 	casos_cruz_cara + 1
+				}		
+				
+			# Proporcion 
+			prob_cara_cruz <- casos_cara_cruz / n
+			prob_cruz_cara <- casos_cruz_cara / n
+			
+			}
+			
+			return(list("Frecuencias="=table(simulacion), 
+				"Proporción primera cara segunda cruz ="=prob_cara_cruz, 
+				"Proporción primera cruz segunda cara ="=prob_cruz_cara))
+		}
+		# Un ejemplo de ejecución es:
+		simular_dos_monedas(n = 15000)
+		# Vemos que los valores observados son muy parecidos a los teóricos, 1/2
  
 		end.rcode-->
 	</div>
@@ -568,89 +568,89 @@ simular_dos_monedas(n = 15000)
 		</div>
 		<!--begin.rcode
 
-# Solución: Para probar las funciones solo hay que cargar el fichero y 
-# llamarlas con su nombre. 
+		# Solución: Para probar las funciones solo hay que cargar el fichero y 
+		# llamarlas con su nombre. 
 
-# Definimos una función lanzas_tres_dados, que consistirá en simular el lanzamiento de
-# 3 dados, devolvera un vector con 3 números que corresponderán a las 3 tiradas del dado
+		# Definimos una función lanzas_tres_dados, que consistirá en simular el lanzamiento de
+		# 3 dados, devolvera un vector con 3 números que corresponderán a las 3 tiradas del dado
 
-lanzar_tres_dados = function(){
-	return(sample(1:6, size = 3, replace = TRUE))
-}
-
-# la función puede llamarse de la siguiente manera:
-lanzar_tres_dados()
-
-# Seguidamente, creamos una funcion para simular el movimiento de la párticula con la progresión 
-# aleatoria pedida cuyo argumento sería el "tiempo" que queremos simular, creamos dos arrays 
-# que corresponderan a la posicion eje x y al eje y de la particula, siendo los últimos elementos
-# la posición actual de la párticula. Utilizamos también una variable pasos para contabilizar los pasos
-# (hemos considerado que ocurre cada paso por cada movimiento vertical u horizontal de la párticula ,
-# es decir, si el primer dado es 1 o 2 un paso sería la partícula moviendose una unidad a la derecha,
-# si la suma del segundo y tercer dado es menor que 5, la partícula se movería hacia arriba y sería
-# otro paso, esto se puede cambiar fácilmente a otra posible adaptación). 
-# Finalmente, utilizamos un booleano condicion_alcanzada para saber si la condición se ha cumplido o no.
- simulacion_particula = function(t = 1000){
-	# Posición instante inicial partícula (0,0)
-	x <- vector("numeric", 1)
-	y <- vector("numeric", 1)
-	pasos <- 0
-	condicion_alcanzada <- FALSE
-	
-	# Limitamos el número de movimientos
-	maximo_tiempo <- min(t, 1000)
-	
-	for(i in 2:maximo_tiempo){
-		# Por cada tiempo t lanzamos 3 dados
-		tres_dados <- lanzar_tres_dados()
-		
-		# Si el primer dado es 1 o 2, movemos el punto una unidad a la derecha
-		# si no, a la izquierda
-		if(tres_dados[1] == 1 || tres_dados[1] == 2){
-			unidad_x <- 1
-		} else {
-			unidad_x <- -1
+		lanzar_tres_dados = function(){
+			return(sample(1:6, size = 3, replace = TRUE))
 		}
 
-		# Actualizamos posición x
-		pasos <- pasos + 1
-		x <- append(x, x[length(x)] + unidad_x)
-		y <- append(y, y[length(y)])
-		
-		# Si la primera coordenada de la particula cumple abs(x) > 100,
-		# el proceso finaliza	
-		if (abs(x[length(x)]) > 100){
-			condicion_alcanzada <- TRUE
-			break
-		}
-		# Si la suma del segundo dado y el tercero es menor que 5,
-		# el punto se mueve una unidad hacia arriba, si no, lo hace hacia abajo.
-		if(sum(tres_dados[2:3]) < 5){
-			unidad_y <- 1
-		} else {
-			unidad_y <- -1
-		}
-		
-		# Actualizamos posicion y		
-		pasos <- pasos + 1
-		x <- append(x, x[length(x)])
-		y <- append(y, y[length(y)] + unidad_y)
-	}
-	
-	plot(x,y, type = "b")
-	posicion_final <- paste("(", x[length(x)], ",", y[length(y)], ")")
-	progresion <- rbind(x,y)
-	return(list("Progresión aleatoria="=progresion,
-			"Posición final="= posicion_final,
-			"Condición alcanzada="=condicion_alcanzada,
-			"Pasos realizados="=pasos))
-}
+		# la función puede llamarse de la siguiente manera:
+		lanzar_tres_dados()
 
-# Hacemos hincapié en que siempre vamos a limitar como máximo de tiempo 1000, la función devolverá
-# la progresión aleatoria seguida, la posición final, si la condición ha sido alcanzada o no y los pasos 
-# realizados.
-# Un ejemplo de ejecución sería:
-simulacion_particula(t = 1000)
+		# Seguidamente, creamos una funcion para simular el movimiento de la párticula con la progresión 
+		# aleatoria pedida cuyo argumento sería el "tiempo" que queremos simular, creamos dos arrays 
+		# que corresponderan a la posicion eje x y al eje y de la particula, siendo los últimos elementos
+		# la posición actual de la párticula. Utilizamos también una variable pasos para contabilizar los pasos
+		# (hemos considerado que ocurre cada paso por cada movimiento vertical u horizontal de la párticula ,
+		# es decir, si el primer dado es 1 o 2 un paso sería la partícula moviendose una unidad a la derecha,
+		# si la suma del segundo y tercer dado es menor que 5, la partícula se movería hacia arriba y sería
+		# otro paso, esto se puede cambiar fácilmente a otra posible adaptación). 
+		# Finalmente, utilizamos un booleano condicion_alcanzada para saber si la condición se ha cumplido o no.
+		simulacion_particula = function(t = 1000){
+			# Posición instante inicial partícula (0,0)
+			x <- vector("numeric", 1)
+			y <- vector("numeric", 1)
+			pasos <- 0
+			condicion_alcanzada <- FALSE
+			
+			# Limitamos el número de movimientos
+			maximo_tiempo <- min(t, 1000)
+			
+			for(i in 2:maximo_tiempo){
+				# Por cada tiempo t lanzamos 3 dados
+				tres_dados <- lanzar_tres_dados()
+				
+				# Si el primer dado es 1 o 2, movemos el punto una unidad a la derecha
+				# si no, a la izquierda
+				if(tres_dados[1] == 1 || tres_dados[1] == 2){
+					unidad_x <- 1
+				} else {
+					unidad_x <- -1
+				}
+
+				# Actualizamos posición x
+				pasos <- pasos + 1
+				x <- append(x, x[length(x)] + unidad_x)
+				y <- append(y, y[length(y)])
+				
+				# Si la primera coordenada de la particula cumple abs(x) > 100,
+				# el proceso finaliza	
+				if (abs(x[length(x)]) > 100){
+					condicion_alcanzada <- TRUE
+					break
+				}
+				# Si la suma del segundo dado y el tercero es menor que 5,
+				# el punto se mueve una unidad hacia arriba, si no, lo hace hacia abajo.
+				if(sum(tres_dados[2:3]) < 5){
+					unidad_y <- 1
+				} else {
+					unidad_y <- -1
+				}
+				
+				# Actualizamos posicion y		
+				pasos <- pasos + 1
+				x <- append(x, x[length(x)])
+				y <- append(y, y[length(y)] + unidad_y)
+			}
+			
+			plot(x,y, type = "b")
+			posicion_final <- paste("(", x[length(x)], ",", y[length(y)], ")")
+			progresion <- rbind(x,y)
+			return(list("Progresión aleatoria="=progresion,
+					"Posición final="= posicion_final,
+					"Condición alcanzada="=condicion_alcanzada,
+					"Pasos realizados="=pasos))
+		}
+
+		# Hacemos hincapié en que siempre vamos a limitar como máximo de tiempo 1000, la función devolverá
+		# la progresión aleatoria seguida, la posición final, si la condición ha sido alcanzada o no y los pasos 
+		# realizados.
+		# Un ejemplo de ejecución sería:
+		simulacion_particula(t = 1000)
 		end.rcode-->
 	</div>
 
@@ -678,97 +678,94 @@ simulacion_particula(t = 1000)
 		</div>
 		<!--begin.rcode
 
-# Solución: Parece que lo más justo sea tener en cuenta cuántas veces ganaría A y 
-# cuántas veces ganaría B, repitiéndose muchas veces. Como el juego se puede alargar como máximo cuatro 
-# partidas más, se consideran todos los resultados si se jugaran las tres partidas y se cuentan los casos
-# favorables a cada jugador. Las probabilidades de sacar cara y cruz son iguales, 1/2
-# Con esto, las probabilidades de que gane A son:
-# (Cara + cara) 1/4 + (Cara + cruz + cara) 1/8 + (cara + cruz + cruz + cara) + 1/16 +
-# (cruz + cara + cara) 1/8 + (cruz + cara + cruz + cara) 1/16 + (cruz + cruz + cara + cara ) 1/16 = 11/16
-# De igual manera para B
-# (cara + cruz + cruz + cruz) 1/16 + (cruz + cara + cruz + cruz) 1/16 +
-# (cruz + cruz + cara + cruz) 1/16 + (cruz + cruz + cruz) 1/8 = 1 - 11/16 = 5/16
-# Siendo esas la propoción que debe seguir para repartir la cantidad apostada.
+		# Solución: Parece que lo más justo sea tener en cuenta cuántas veces ganaría A y 
+		# cuántas veces ganaría B, repitiéndose muchas veces. Como el juego se puede alargar como máximo cuatro 
+		# partidas más, se consideran todos los resultados si se jugaran las tres partidas y se cuentan los casos
+		# favorables a cada jugador. Las probabilidades de sacar cara y cruz son iguales, 1/2
+		# Con esto, las probabilidades de que gane A son:
+		# (Cara + cara) 1/4 + (Cara + cruz + cara) 1/8 + (cara + cruz + cruz + cara) + 1/16 +
+		# (cruz + cara + cara) 1/8 + (cruz + cara + cruz + cara) 1/16 + (cruz + cruz + cara + cara ) 1/16 = 11/16
+		# De igual manera para B
+		# (cara + cruz + cruz + cruz) 1/16 + (cruz + cara + cruz + cruz) 1/16 +
+		# (cruz + cruz + cara + cruz) 1/16 + (cruz + cruz + cruz) 1/8 = 1 - 11/16 = 5/16
+		# Siendo esas la propoción que debe seguir para repartir la cantidad apostada.
 
-# Creamos una función simulacion_juego cuyos argumentos son la puntuación de A, la puntuación de B, y
-# los puntos necesarios para ganar, y simulamos el juego a partir de ese momento.
+		# Creamos una función simulacion_juego cuyos argumentos son la puntuación de A, la puntuación de B, y
+		# los puntos necesarios para ganar, y simulamos el juego a partir de ese momento.
 
-simulacion_juego = function(puntuacion_A = 4, puntuacion_B = 3, puntos_necesarios = 6){
+		simulacion_juego = function(puntuacion_A = 4, puntuacion_B = 3, puntos_necesarios = 6){
 
-	no_ganador <- TRUE
-	moneda <- c("Cara","Cruz")
+			no_ganador <- TRUE
+			moneda <- c("Cara","Cruz")
 
-	# Entramos en un bucle hasta que alguno gane	 
-	while(no_ganador){
-		lanzamiento_moneda <- sample(moneda, size = 1, replace = TRUE)
+			# Entramos en un bucle hasta que alguno gane	 
+			while(no_ganador){
+				lanzamiento_moneda <- sample(moneda, size = 1, replace = TRUE)
 
-		if(lanzamiento_moneda == "Cara"){
-			puntuacion_A <- puntuacion_A + 1
-		} else {
-			puntuacion_B <- puntuacion_B + 1
+				if(lanzamiento_moneda == "Cara"){
+					puntuacion_A <- puntuacion_A + 1
+				} else {
+					puntuacion_B <- puntuacion_B + 1
+				}
+
+				if(puntuacion_A == puntos_necesarios){
+					no_ganador <- FALSE
+					ganador <- "Ganador: A"
+				}
+
+				if(puntuacion_B == puntos_necesarios){
+					no_ganador <- FALSE
+					ganador <- "Ganador: B"
+				}
+			}
+
+			return(ganador)
 		}
+		# Se puede llamar a la función mediante su nombre simplemente con los valores predeterminados
+		simulacion_juego()
 
-		if(puntuacion_A == puntos_necesarios){
-			no_ganador <- FALSE
-			ganador <- "Ganador: A"
+		# Seguidamente, creamos una función, n_veces_juego que permite realizar n veces esa simulación, 
+		# ejecuta simplemente pasandole como argumento el número de veces que se quiere replicar el juego.
+		n_veces_juego = function(n = 98765, puntuacion_A = 4, puntuacion_B = 3, puntos_necesarios = 6){
+			# Reproducimos el juego n veces
+			n_juegos <- replicate(n, simulacion_juego(puntuacion_A, puntuacion_B, puntos_necesarios))
+			
+			# Tabla de frecuencias 
+			freq <- table(n_juegos)
+			
+			# Proporción de veces que gana A o B
+			prob_A <- sum (n_juegos == "Ganador: A") / n
+			prob_B <- sum (n_juegos == "Ganador: B") / n
+
+			return(list("Frecuencias="=freq, 
+						"Proporción de veces que gana A="=prob_A, 
+						"Proporción de veces que gana B="=prob_B))
 		}
+		n_veces_juego(n = 98765)
+		# La función devolverá una tabla con la frecuencia de los ganadores, ganador A o ganador B, junto a la 
+		# proporción de veces que gana cada uno. Vemos que para un n elevado, como es el caso de n=98765,
+		# los valores observados coinciden con los teóricos cuando nuestras repeticiones son bastante grandes.
 
-		if(puntuacion_B == puntos_necesarios){
-			no_ganador <- FALSE
-			ganador <- "Ganador: B"
+		# Finalmente, creamos una función simulacion_juego_mejorado, con los parámetros de simulacion_juego
+		# pero arbitrarios, con el detalle de que las respectivas puntuaciones estarán limitadas 
+		# al parámetro arbitrario de la puntuación necesaria para ganar.
+		# Función mejorada con datos arbitrarios
+		simulacion_juego_mejorado = function(){
+			
+			puntos_necesarios <- sample(1:1000, size = 1, replace = TRUE)
+			print(paste("Puntos para ganar",puntos_necesarios))
+			# No tiene sentido empezar con puntos arbitrarios mayores que los necesarios
+			# limitamos ambas puntuaciones a ello
+			puntuacion_A <- sample(0:puntos_necesarios, size = 1, replace = TRUE)
+			print(paste("Puntos que tiene A",puntuacion_A))
+			puntuacion_B <- sample(0:puntos_necesarios, size = 1, replace = TRUE)
+			print(paste("Puntos que tiene B",puntuacion_B))
+
+			# Simulamos el juego con estos valores
+			simulacion_juego(puntuacion_A, puntuacion_B, puntos_necesarios)
 		}
-	}
-
-	return(ganador)
-}
-# Se puede llamar a la función mediante su nombre simplemente con los valores predeterminados
-simulacion_juego()
-
-# Seguidamente, creamos una función, n_veces_juego que permite realizar n veces esa simulación, 
-# ejecuta simplemente pasandole como argumento el número de veces que se quiere replicar el juego.
-n_veces_juego = function(n = 98765, puntuacion_A = 4, puntuacion_B = 3, puntos_necesarios = 6){
-	# Reproducimos el juego n veces
-	n_juegos <- replicate(n, simulacion_juego(puntuacion_A, puntuacion_B, puntos_necesarios))
-	
-	# Tabla de frecuencias 
-	freq <- table(n_juegos)
-	
-	# Proporción de veces que gana A o B
-	prob_A <- sum (n_juegos == "Ganador: A") / n
-	prob_B <- sum (n_juegos == "Ganador: B") / n
-
-	return(list("Frecuencias="=freq, 
-				"Proporción de veces que gana A="=prob_A, 
-				"Proporción de veces que gana B="=prob_B))
-}
-n_veces_juego(n = 98765)
-# La función devolverá una tabla con la frecuencia de los ganadores, ganador A o ganador B, junto a la 
-# proporción de veces que gana cada uno. Vemos que para un n elevado, como es el caso de n=98765,
-# los valores observados coinciden con los teóricos cuando nuestras repeticiones son bastante grandes.
-
-# Finalmente, creamos una función simulacion_juego_mejorado, con los parámetros de simulacion_juego
-# pero arbitrarios, con el detalle de que las respectivas puntuaciones estarán limitadas 
-# al parámetro arbitrario de la puntuación necesaria para ganar.
-# Función mejorada con datos arbitrarios
-simulacion_juego_mejorado = function(){
-	
-	puntos_necesarios <- sample(1:1000, size = 1, replace = TRUE)
-	print(paste("Puntos para ganar",puntos_necesarios))
-	# No tiene sentido empezar con puntos arbitrarios mayores que los necesarios
-	# limitamos ambas puntuaciones a ello
-	puntuacion_A <- sample(0:puntos_necesarios, size = 1, replace = TRUE)
-	print(paste("Puntos que tiene A",puntuacion_A))
-	puntuacion_B <- sample(0:puntos_necesarios, size = 1, replace = TRUE)
-	print(paste("Puntos que tiene B",puntuacion_B))
-
-	# Simulamos el juego con estos valores
-	simulacion_juego(puntuacion_A, puntuacion_B, puntos_necesarios)
-}
-# Se puede llamar a la función de la siguiente manera:
-simulacion_juego_mejorado()
-
-
-
+		# Se puede llamar a la función de la siguiente manera:
+		simulacion_juego_mejorado()
 		end.rcode-->
 	</div>
 
@@ -797,97 +794,97 @@ simulacion_juego_mejorado()
 		</div>
 		<!--begin.rcode
 
-# Solución: 
-# Parte teórica (aunque no sea necesaria)
-# Al lanzar 4 veces un dado, se pueden obtener 6*6*6*6 = 1296 resultados. De esos resultados
-# puede salir resultados de 1 a 5 cuatro veces seguidas, 5*5*5*5 = 625 veces, luego los resultados que contienen
-# al menos un 6 son los totales menos estos, 1296 - 625 = 671. Luego en 4 lanzamientos de un dado hay más 
-# resultados que contienen algún 6 (671) que resultados con ningún seis (625), por eso es más ventajoso.
-# 671/1296 = 0.51774
-# 625/1296 = 0.48225
+		# Solución: 
+		# Parte teórica (aunque no sea necesaria)
+		# Al lanzar 4 veces un dado, se pueden obtener 6*6*6*6 = 1296 resultados. De esos resultados
+		# puede salir resultados de 1 a 5 cuatro veces seguidas, 5*5*5*5 = 625 veces, luego los resultados que contienen
+		# al menos un 6 son los totales menos estos, 1296 - 625 = 671. Luego en 4 lanzamientos de un dado hay más 
+		# resultados que contienen algún 6 (671) que resultados con ningún seis (625), por eso es más ventajoso.
+		# 671/1296 = 0.51774
+		# 625/1296 = 0.48225
 
-# Respecto a la segunda suposición, un par de dados son 6*6 = 36 resultados, 24 lanzamientos de un par de dados
-# será multiplicar 36 24 veces, 36^24 partidas posibles.
-# Vemos cuantas de esas partidas son favorables a obtener al menos un doble 6, como hemos visto antes,
-# en un par de dados hay 36-1=35 resultados que no son doble 6, 35^24 con ningun doble 6.
-# La proporción de partidas con ningún doble 6 sería: 
-# (35^24) / (36^24) = 0.5085961
-# Mientras que la proporción con al menos un doble seis
-# 1 - [(35^24) / (36^24)] = 0.4914039
-# En este caso saldría perdiendo el que apuesta, aunque la diferencia sea muy pequeña si se juega muchas veces
-# esta desventaja se puede llegar a notar.
+		# Respecto a la segunda suposición, un par de dados son 6*6 = 36 resultados, 24 lanzamientos de un par de dados
+		# será multiplicar 36 24 veces, 36^24 partidas posibles.
+		# Vemos cuantas de esas partidas son favorables a obtener al menos un doble 6, como hemos visto antes,
+		# en un par de dados hay 36-1=35 resultados que no son doble 6, 35^24 con ningun doble 6.
+		# La proporción de partidas con ningún doble 6 sería: 
+		# (35^24) / (36^24) = 0.5085961
+		# Mientras que la proporción con al menos un doble seis
+		# 1 - [(35^24) / (36^24)] = 0.4914039
+		# En este caso saldría perdiendo el que apuesta, aunque la diferencia sea muy pequeña si se juega muchas veces
+		# esta desventaja se puede llegar a notar.
 
-# Parte práctica
-# 1) Creamos la función lanzar_dado_n_veces, que simula el lanzamiento de un dado n veces (lanzar_dado)
-# y devuelve el número de lanzamientos cuyo resultado ha sido un 6.
+		# Parte práctica
+		# 1) Creamos la función lanzar_dado_n_veces, que simula el lanzamiento de un dado n veces (lanzar_dado)
+		# y devuelve el número de lanzamientos cuyo resultado ha sido un 6.
 
-lanzar_dado = function(){
-    caras <- 1:6
-    # Devolvemos el lanzamiento de 1 dado
-    return(sample(caras, size = 1, replace = TRUE))
-}
+		lanzar_dado = function(){
+			caras <- 1:6
+			# Devolvemos el lanzamiento de 1 dado
+			return(sample(caras, size = 1, replace = TRUE))
+		}
 
-lanzar_dado_n_veces = function(n = 10){
-    lanzamientos <- replicate(n, lanzar_dado())
-    suma_de_seis <- sum(lanzamientos == 6) 
+		lanzar_dado_n_veces = function(n = 10){
+			lanzamientos <- replicate(n, lanzar_dado())
+			suma_de_seis <- sum(lanzamientos == 6) 
 
-    return(suma_de_seis)
-}
+			return(suma_de_seis)
+		}
 
-lanzar_dado_n_veces(n = 4)
-# 2) Seguidamente, definimos la función simulacion_dado(j, n), que permita realizar j veces la simulación
-# de lanzar el dado n veces.
+		lanzar_dado_n_veces(n = 4)
+		# 2) Seguidamente, definimos la función simulacion_dado(j, n), que permita realizar j veces la simulación
+		# de lanzar el dado n veces.
 
 
-simulacion_dado = function(j = 10000, n = 4){
-    lanzamientos <- replicate(j, lanzar_dado_n_veces(n))
-    
-    casos_seis <- sum(lanzamientos > 0) / j
+		simulacion_dado = function(j = 10000, n = 4){
+			lanzamientos <- replicate(j, lanzar_dado_n_veces(n))
+			
+			casos_seis <- sum(lanzamientos > 0) / j
 
-    return(paste("Proporción de veces que ha salido un 6 con un dado en 4 tiradas: ", casos_seis))
-}
-# Contamos las veces que ha salido al menos un 6, como la función lanzar_dado_n_veces devuelve la
-# suma de veces que el lanzamiento ha sido un 6, bastará con comprobar los lanzamientos que son mayores
-# que 0.
+			return(paste("Proporción de veces que ha salido un 6 con un dado en 4 tiradas: ", casos_seis))
+		}
+		# Contamos las veces que ha salido al menos un 6, como la función lanzar_dado_n_veces devuelve la
+		# suma de veces que el lanzamiento ha sido un 6, bastará con comprobar los lanzamientos que son mayores
+		# que 0.
 
-# 3) Ejecutando la función con j = 10000 y n = 4, obtenemos el resultado de 0.51809, 
-# lo cúal coincide con el valor teórico que esperabamos
-simulacion_dado(j = 10000, n = 4)
+		# 3) Ejecutando la función con j = 10000 y n = 4, obtenemos el resultado de 0.51809, 
+		# lo cúal coincide con el valor teórico que esperabamos
+		simulacion_dado(j = 10000, n = 4)
 
-# 4) Realizamos el mismo procedimiento que hemos hecho con un dado, pero con dos dados,
-# creamos la función lanzar_dos_dados que simula el lanzamiento de dos dados,
-# y la función lanzar_dos_dados_n_veces, con la excepción de que en la función lanzar dos 
-# dados devolvemos la suma de ambos dados, así en lanzar_dos_dados_n_veces para contar
-# los lanzamientos que han tenido doble seis comprobaremos aquellos cuya suma es 6+6=12
-lanzar_dos_dados = function(){
-    caras <- 1:6
-    # Devolvemos el lanzamiento de 2 dados
-    return(sum(sample(caras, size = 2, replace = TRUE)))
-}
+		# 4) Realizamos el mismo procedimiento que hemos hecho con un dado, pero con dos dados,
+		# creamos la función lanzar_dos_dados que simula el lanzamiento de dos dados,
+		# y la función lanzar_dos_dados_n_veces, con la excepción de que en la función lanzar dos 
+		# dados devolvemos la suma de ambos dados, así en lanzar_dos_dados_n_veces para contar
+		# los lanzamientos que han tenido doble seis comprobaremos aquellos cuya suma es 6+6=12
+		lanzar_dos_dados = function(){
+			caras <- 1:6
+			# Devolvemos el lanzamiento de 2 dados
+			return(sum(sample(caras, size = 2, replace = TRUE)))
+		}
 
-lanzar_dos_dados()
+		lanzar_dos_dados()
 
-lanzar_dos_dados_n_veces = function(n = 10){
-    lanzamientos <- replicate(n, lanzar_dos_dados())
-    suma_dos_seis <- sum(lanzamientos == 12)
+		lanzar_dos_dados_n_veces = function(n = 10){
+			lanzamientos <- replicate(n, lanzar_dos_dados())
+			suma_dos_seis <- sum(lanzamientos == 12)
 
-    return(suma_dos_seis)
-}
- 
-lanzar_dos_dados_n_veces(n=24)
-# 5) Como hemos hecho en los apartados anteriores, creamos la función simulacion_dos_dados, 
-# la cuál nos permite replicar j veces el experimento de lanzar n veces 2 dados.
-# Devolvemos la proporción de veces cuyos resultados han sido al menos un doble seis en n tiradas
-simulacion_dos_dados = function(j = 10000, n = 24){
-    lanzamientos <- replicate(j, lanzar_dos_dados_n_veces(n))
-    
-    casos_dos_seis <- sum(lanzamientos > 0) / j
+			return(suma_dos_seis)
+		}
+		
+		lanzar_dos_dados_n_veces(n=24)
+		# 5) Como hemos hecho en los apartados anteriores, creamos la función simulacion_dos_dados, 
+		# la cuál nos permite replicar j veces el experimento de lanzar n veces 2 dados.
+		# Devolvemos la proporción de veces cuyos resultados han sido al menos un doble seis en n tiradas
+		simulacion_dos_dados = function(j = 10000, n = 24){
+			lanzamientos <- replicate(j, lanzar_dos_dados_n_veces(n))
+			
+			casos_dos_seis <- sum(lanzamientos > 0) / j
 
-    return(paste("Proporción de veces que han salido dobles 6 con dos dados en 24 tiradas: ", casos_dos_seis))
-}
-# 6) Ejecutando, 
-simulacion_dos_dados(j = 10000, n = 24)
-# vemos que coincide con el valor teórico que esperabamos
+			return(paste("Proporción de veces que han salido dobles 6 con dos dados en 24 tiradas: ", casos_dos_seis))
+		}
+		# 6) Ejecutando, 
+		simulacion_dos_dados(j = 10000, n = 24)
+		# vemos que coincide con el valor teórico que esperabamos
 		end.rcode-->
 	</div>
 
